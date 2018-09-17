@@ -15,8 +15,8 @@ const StyledDiv = styled.div`
 const NutritonGrid = styled.div`
   margin-top: 40px;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 `
 
 export default class NutritionScreen extends Component {
