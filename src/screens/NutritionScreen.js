@@ -12,6 +12,12 @@ const StyledDiv = styled.div`
   height: 150px;
 `
 
+const StyledSpan = styled.span`
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+`
+
 const NutritonGrid = styled.div`
   margin-top: 40px;
   display: grid;
@@ -30,6 +36,7 @@ export default class NutritionScreen extends Component {
           <div>Altersspanne:</div>
           <div>25 bis unter 51</div>
         </StyledDiv>
+        <StyledSpan>Empfohlene Tagesdosis:</StyledSpan>
 
         <NutritonGrid>
           <NutritionTile />
