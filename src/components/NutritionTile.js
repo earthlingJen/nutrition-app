@@ -20,8 +20,8 @@ export default class NutritionTile extends Component {
     return (
       <StyledTile>
         <div>Eisen</div>
-        <div> 15</div>
-        <div> mg</div>
+        <div>15</div>
+        <div>mg</div>
       </StyledTile>
     )
   }
