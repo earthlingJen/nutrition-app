@@ -12,10 +12,6 @@ const StyledHeader = styled.h1`
 
 export default class Header extends Component {
   render() {
-    return (
-      <div>
-        <StyledHeader>Bedarf</StyledHeader>
-      </div>
-    )
+    return <StyledHeader>Bedarf</StyledHeader>
   }
 }
