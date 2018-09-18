@@ -4,6 +4,7 @@ import { setSelectSex, setSelectAge } from '../actions'
 
 const mapStateToProps = state => ({
   user: state.user,
+  nutriNeeds: state.nutriNeeds,
 })
 
 const mapDispatchToProps = dispatch => ({

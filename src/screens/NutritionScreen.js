@@ -40,6 +40,7 @@ export default class NutritionScreen extends Component {
     setSelectSex: propTypes.func.isRequired,
     setSelectAge: propTypes.func.isRequired,
     user: propTypes.object,
+    nutriNeeds: propTypes.arrayOf(propTypes.object),
   }
 
   render() {
@@ -75,15 +76,17 @@ export default class NutritionScreen extends Component {
   }
 
   renderNutriTiles() {
-    console.log(nutriNeeds.iron.female['15'])
+    console.log(nutriNeeds)
     console.log(this.props.user)
-    return (
-      <React.Fragment>
-        <NutritionTile />
-        <NutritionTile />
-        <NutritionTile />
-        <NutritionTile />
-      </React.Fragment>
-    )
+
+    return this.props.nutriNeeds.map((nutrition, index) => {
+      return (
+        <NutritionTile
+          key={index}
+          nutriName={nutrition.nutriName}
+          nutriUnit={nutrition.unit}
+        />
+      )
+    })
   }
 }

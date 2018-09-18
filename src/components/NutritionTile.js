@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { nutriNeeds } from '../data/NutriNeeds'
+import PropTypes from 'prop-types'
 
 const size = 102
 
@@ -22,12 +22,18 @@ const StyledTile = styled.div`
 `
 
 export default class NutritionTile extends Component {
+  static propTypes = {
+    nutriName: PropTypes.string,
+    nutriUnit: PropTypes.string,
+  }
   render() {
+    console.log(this.props.nutriName)
     return (
       <StyledTile>
-        <div>{nutriNeeds.magnesium.nutriName}</div>
-        <div>{nutriNeeds.magnesium.female['25']}</div>
-        <div>{nutriNeeds.magnesium.unit}</div>
+        <div>{this.props.nutriName}</div>
+        <div>{this.props.nutriUnit}</div>
+        {/* <div>{nutriNeeds.magnesium.female['25']}</div>
+         */}
       </StyledTile>
     )
   }

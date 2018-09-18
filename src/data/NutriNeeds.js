@@ -1,5 +1,5 @@
-export const nutriNeeds = {
-  magnesium: {
+export const nutriNeeds = [
+  {
     nutriName: 'Magnesium',
     unit: 'mg',
     female: {
@@ -14,7 +14,7 @@ export const nutriNeeds = {
     },
   },
 
-  calcium: {
+  {
     nutriName: 'Kalzium',
     unit: 'mg',
     female: {
@@ -29,7 +29,7 @@ export const nutriNeeds = {
     },
   },
 
-  iron: {
+  {
     nutriName: 'Eisen',
     unit: 'mg',
     female: {
@@ -44,7 +44,7 @@ export const nutriNeeds = {
     },
   },
 
-  zinc: {
+  {
     nutriName: 'Zink',
     unit: 'mg',
     female: {
@@ -59,7 +59,7 @@ export const nutriNeeds = {
     },
   },
 
-  iodine: {
+  {
     nutriName: 'Jod',
     unit: 'µg',
     female: {
@@ -74,7 +74,7 @@ export const nutriNeeds = {
     },
   },
 
-  vitA: {
+  {
     nutriName: 'Vit. A',
     unit: 'mg',
     female: {
@@ -89,7 +89,7 @@ export const nutriNeeds = {
     },
   },
 
-  vitB2: {
+  {
     nutriName: 'Vit. B2',
     unit: 'mg',
     female: {
@@ -104,7 +104,7 @@ export const nutriNeeds = {
     },
   },
 
-  folicAcid: {
+  {
     nutriName: 'Folsäure',
     unit: 'µg',
     female: {
@@ -119,7 +119,7 @@ export const nutriNeeds = {
     },
   },
 
-  selenium: {
+  {
     nutriName: 'Selen',
     unit: 'µg',
     female: {
@@ -133,4 +133,4 @@ export const nutriNeeds = {
       '25': 70,
     },
   },
-}
+]
