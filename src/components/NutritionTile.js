@@ -25,15 +25,15 @@ export default class NutritionTile extends Component {
   static propTypes = {
     nutriName: PropTypes.string,
     nutriUnit: PropTypes.string,
+    nutriValue: PropTypes.number,
   }
   render() {
     console.log(this.props.nutriName)
     return (
       <StyledTile>
         <div>{this.props.nutriName}</div>
+        <div>{this.props.nutriValue}</div>
         <div>{this.props.nutriUnit}</div>
-        {/* <div>{nutriNeeds.magnesium.female['25']}</div>
-         */}
       </StyledTile>
     )
   }

@@ -78,12 +78,14 @@ export default class NutritionScreen extends Component {
   renderNutriTiles() {
     console.log(nutriNeeds)
     console.log(this.props.user)
+    const { sex, age } = this.props.user
 
     return this.props.nutriNeeds.map((nutrition, index) => {
       return (
         <NutritionTile
           key={index}
           nutriName={nutrition.nutriName}
+          nutriValue={nutrition[sex][age]}
           nutriUnit={nutrition.unit}
         />
       )
