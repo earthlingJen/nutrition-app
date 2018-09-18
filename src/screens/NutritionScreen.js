@@ -42,11 +42,6 @@ export default class NutritionScreen extends Component {
     user: propTypes.object,
   }
 
-  renderNutriTiles() {
-    console.log(nutriNeeds.iron.female['15'])
-    console.log(this.props.user)
-  }
-
   render() {
     return (
       <React.Fragment>
@@ -54,6 +49,7 @@ export default class NutritionScreen extends Component {
         <StyledDiv>
           <label htmlFor="sex">biologisches Geschlecht:</label>
           <StyledSelect
+            defaultValue="female"
             id="sex"
             onChange={event => this.props.setSelectSex(event.target.value)}
           >
@@ -65,6 +61,7 @@ export default class NutritionScreen extends Component {
           <StyledSelect
             id="age"
             onChange={event => this.props.setSelectAge(event.target.value)}
+            defaultValue="25to50"
           >
             <option value="15to18">15 bis unter 19</option>
             <option value="19to24">19 bis unter 25</option>
@@ -72,11 +69,20 @@ export default class NutritionScreen extends Component {
           </StyledSelect>
         </StyledDiv>
         <StyledSpan>Empfohlene Tagesdosis:</StyledSpan>
+        <NutritonGrid>{this.renderNutriTiles()}</NutritonGrid>
+      </React.Fragment>
+    )
+  }
 
-        <NutritonGrid>
-          <NutritionTile />
-          {this.renderNutriTiles()}
-        </NutritonGrid>
+  renderNutriTiles() {
+    console.log(nutriNeeds.iron.female['15'])
+    console.log(this.props.user)
+    return (
+      <React.Fragment>
+        <NutritionTile />
+        <NutritionTile />
+        <NutritionTile />
+        <NutritionTile />
       </React.Fragment>
     )
   }

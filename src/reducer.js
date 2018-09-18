@@ -1,12 +1,12 @@
-import { load } from './services'
+//import { load } from './services'
 import ACTIONS from './actions'
 import { nutriNeeds } from './data/NutriNeeds'
 
-const initialState = load('app') || {
+const initialState = /*load('app') ||*/ {
   nutriNeeds: nutriNeeds,
   user: {
-    sex: null,
-    age: null,
+    sex: 'female',
+    age: '25to50',
   },
 }
 

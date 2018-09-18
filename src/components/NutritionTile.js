@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { nutriNeeds } from '../data/NutriNeeds'
 
-const size = 80
+const size = 102
 
 const StyledTile = styled.div`
   margin: 5px auto;
@@ -13,15 +14,20 @@ const StyledTile = styled.div`
   align-items: center;
   width: ${size}px;
   height: ${size}px;
+  padding: 2px;
+
+  &:hover {
+    background: grey;
+  }
 `
 
 export default class NutritionTile extends Component {
   render() {
     return (
       <StyledTile>
-        <div>Eisen</div>
-        <div>15</div>
-        <div>mg</div>
+        <div>{nutriNeeds.magnesium.nutriName}</div>
+        <div>{nutriNeeds.magnesium.female['25']}</div>
+        <div>{nutriNeeds.magnesium.unit}</div>
       </StyledTile>
     )
   }
