@@ -28,7 +28,7 @@ export default class NutritionTile extends Component {
     nutriValue: PropTypes.number,
   }
   render() {
-    console.log(this.props.nutriName)
+    //console.log(this.props.nutriName)
     return (
       <StyledTile>
         <div>{this.props.nutriName}</div>

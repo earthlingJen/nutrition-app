@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import Header from '../components/Header'
 import styled from 'styled-components'
 import NutritionTile from '../components/NutritionTile'
-import { nutriNeeds } from '../data/NutriNeeds'
-import propTypes from 'prop-types'
+import AgeSelect from '../components/AgeSelect'
+import SexSelect from '../components/SexSelect'
+
+import PropTypes from 'prop-types'
 
 const StyledDiv = styled.div`
   margin-top: 40px;
@@ -27,47 +29,22 @@ const NutritonGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
 `
 
-const StyledSelect = styled.select`
-  border: solid 1px lightblue;
-  font-size: 15px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  padding-left: 5%;
-`
-
 export default class NutritionScreen extends Component {
   static propTypes = {
-    setSelectSex: propTypes.func.isRequired,
-    setSelectAge: propTypes.func.isRequired,
-    user: propTypes.object,
-    nutriNeeds: propTypes.arrayOf(propTypes.object),
+    setSelectSex: PropTypes.func.isRequired,
+    setSelectAge: PropTypes.func.isRequired,
+    user: PropTypes.object,
+    nutriNeeds: PropTypes.arrayOf(PropTypes.object),
   }
 
   render() {
+    const { setSelectAge, setSelectSex } = this.props
     return (
       <React.Fragment>
         <Header />
         <StyledDiv>
-          <label htmlFor="sex">biologisches Geschlecht:</label>
-          <StyledSelect
-            defaultValue="female"
-            id="sex"
-            onChange={event => this.props.setSelectSex(event.target.value)}
-          >
-            <option value="female">weiblich</option>
-            <option value="male">männlich</option>
-          </StyledSelect>
-
-          <label htmlFor="age">Altersspanne:</label>
-          <StyledSelect
-            id="age"
-            onChange={event => this.props.setSelectAge(event.target.value)}
-            defaultValue="25to50"
-          >
-            <option value="15to18">15 bis unter 19</option>
-            <option value="19to24">19 bis unter 25</option>
-            <option value="25to50">25 bis unter 51</option>
-          </StyledSelect>
+          <SexSelect setSelectSex={setSelectSex} />
+          <AgeSelect setSelectAge={setSelectAge} />
         </StyledDiv>
         <StyledSpan>Empfohlene Tagesdosis:</StyledSpan>
         <NutritonGrid>{this.renderNutriTiles()}</NutritonGrid>
@@ -76,11 +53,13 @@ export default class NutritionScreen extends Component {
   }
 
   renderNutriTiles() {
-    console.log(nutriNeeds)
-    console.log(this.props.user)
-    const { sex, age } = this.props.user
+    const { user, nutriNeeds } = this.props
 
-    return this.props.nutriNeeds.map((nutrition, index) => {
+    //console.log(nutriNeeds)
+    //console.log(user)
+    const { sex, age } = user
+
+    return nutriNeeds.map((nutrition, index) => {
       return (
         <NutritionTile
           key={index}
