@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { applyMiddleware, createStore } from 'redux'
 
 import NutritionScreenContainer from '../containers/NutritionScreenContainer'
+import PlanningScreenContainer from '../containers/PlanningScreenContainer'
 
 import { saveToLocalStorage } from '../middlewares'
 import reducer from '../reducer'
@@ -26,6 +27,7 @@ class App extends Component {
               path="/nutrition"
               component={NutritionScreenContainer}
             />
+            <Route exact path="/planning" component={PlanningScreenContainer} />
           </div>
         </Provider>
       </Router>
