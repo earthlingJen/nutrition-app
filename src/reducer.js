@@ -1,9 +1,11 @@
 //import { load } from './services'
 import ACTIONS from './actions'
 import { nutriNeeds } from './data/NutriNeeds'
+import { veggies } from './data/Veggies'
 
 const initialState = /*load('app') ||*/ {
   nutriNeeds: nutriNeeds,
+  veggies: veggies,
   user: {
     sex: 'female',
     age: '25to50',

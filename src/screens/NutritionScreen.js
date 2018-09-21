@@ -63,9 +63,6 @@ export default class NutritionScreen extends Component {
 
   renderNutriTiles() {
     const { user, nutriNeeds } = this.props
-
-    //console.log(nutriNeeds)
-    //console.log(user)
     const { sex, age } = user
 
     return nutriNeeds.map((nutrition, index) => {
