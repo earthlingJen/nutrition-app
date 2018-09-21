@@ -8,6 +8,7 @@ const initialState = /*load('app') ||*/ {
     sex: 'female',
     age: '25to50',
   },
+  selectedNutrition: {},
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -28,6 +29,12 @@ export default function reducer(state = initialState, action = {}) {
         ...state.user,
         age: action.payload,
       },
+    }
+
+  case ACTIONS.SAVE_VALUE:
+    return {
+      ...state,
+      selectedNutrition: action.payload,
     }
 
   default:

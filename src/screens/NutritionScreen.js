@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
-import Header from '../components/Header'
 import styled from 'styled-components'
 import NutritionTile from '../components/NutritionTile'
 import AgeSelect from '../components/AgeSelect'
 import SexSelect from '../components/SexSelect'
-
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+
+const StyledHeader = styled.h1`
+  background: #50e379;
+  color: white;
+  padding: 20px 10px 10px;
+  margin: -10px;
+  display: flex;
+  justify-content: center;
+`
 
 const StyledDiv = styled.div`
   margin-top: 40px;
@@ -35,13 +43,14 @@ export default class NutritionScreen extends Component {
     setSelectAge: PropTypes.func.isRequired,
     user: PropTypes.object,
     nutriNeeds: PropTypes.arrayOf(PropTypes.object),
+    saveValue: PropTypes.func,
   }
 
   render() {
     const { setSelectAge, setSelectSex } = this.props
     return (
       <React.Fragment>
-        <Header />
+        <StyledHeader>Bedarf</StyledHeader>
         <StyledDiv>
           <SexSelect setSelectSex={setSelectSex} />
           <AgeSelect setSelectAge={setSelectAge} />
@@ -60,13 +69,25 @@ export default class NutritionScreen extends Component {
     const { sex, age } = user
 
     return nutriNeeds.map((nutrition, index) => {
+      const selectedNutrition = {
+        nutriName: nutrition.nutriName,
+        nutriValue: nutrition[sex][age],
+        nutriUnit: nutrition.unit,
+      }
       return (
-        <NutritionTile
+        <Link
+          to="/planning"
           key={index}
-          nutriName={nutrition.nutriName}
-          nutriValue={nutrition[sex][age]}
-          nutriUnit={nutrition.unit}
-        />
+          style={{ color: 'black', textDecoration: 'none' }}
+          onClick={() => this.props.saveValue(selectedNutrition)}
+        >
+          <NutritionTile
+            key={index}
+            nutriName={nutrition.nutriName}
+            nutriValue={nutrition[sex][age]}
+            nutriUnit={nutrition.unit}
+          />
+        </Link>
       )
     })
   }

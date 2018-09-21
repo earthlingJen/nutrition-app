@@ -1,8 +1,10 @@
 import { connect } from 'react-redux'
 import PlanningScreen from '../screens/PlanningScreen'
 
-//const mapStateToProps = () => ({})
+const mapStateToProps = state => ({
+  selectedNutrition: state.selectedNutrition,
+})
 
 //const mapDispatchToProps = () => ({})
 
-export default connect(null)(PlanningScreen)
+export default connect(mapStateToProps)(PlanningScreen)
