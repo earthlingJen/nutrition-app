@@ -24,7 +24,7 @@ export default class PlanningScreen extends Component {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
     return (
       <React.Fragment>
-        <StyledHeader>Plane</StyledHeader>
+        <StyledHeader>Plane- {nutriName}</StyledHeader>
         <StyledHeaderTile>
           <NutritionTile
             nutriName={nutriName}
