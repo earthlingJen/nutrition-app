@@ -23,6 +23,7 @@ const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   align-items: center;
+  margin-left: 5%;
 `
 const FoodBar = styled.div`
   display: flex;
