@@ -10,7 +10,12 @@ const initialState = /*load('app') ||*/ {
     sex: 'female',
     age: '25to50',
   },
-  selectedNutrition: {},
+  selectedNutrition: {
+    nutriName: 'Magnesium',
+    nutriValue: 1000,
+    nutriUnit: 'mg',
+  },
+  nutriSum: 0,
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -40,10 +45,16 @@ export default function reducer(state = initialState, action = {}) {
     }
 
   case ACTIONS.ADD_TO_PLATE:
-    console.log('food to list')
+    // console.log('food to list')
     return {
       ...state,
       selectedNutrition: action.payload,
+    }
+
+  case ACTIONS.UPDATE_NUTRI_SUM:
+    return {
+      ...state,
+      nutriSum: state.nutriSum + action.payload,
     }
 
   default:

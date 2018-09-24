@@ -75,7 +75,7 @@ export const nutriNeeds = [
   },
 
   {
-    nutriName: 'Vit. A',
+    nutriName: 'VitA',
     unit: 'mg',
     female: {
       '15to18': 0.9,
@@ -90,7 +90,7 @@ export const nutriNeeds = [
   },
 
   {
-    nutriName: 'Vit. B2',
+    nutriName: 'VitB2',
     unit: 'mg',
     female: {
       '15to18': 1.2,

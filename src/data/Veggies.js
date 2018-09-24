@@ -1,40 +1,40 @@
 export const veggies = [
   {
     veggieName: 'Spinat',
-    magnesium: {
-      value: 58,
+    Magnesium: {
+      veggieValue: 58,
       unit: 'mg',
     },
-    calcium: {
-      value: 117,
+    Kalzium: {
+      veggieValue: 117,
       unit: 'mg',
     },
-    eisen: {
-      value: 3.4,
+    Eisen: {
+      veggieValue: 3.4,
       unit: 'mg',
     },
-    zink: {
-      value: 617,
+    Zink: {
+      veggieValue: 617,
       unit: 'µg',
     },
-    jod: {
-      value: 12,
+    Jod: {
+      veggieValue: 12,
       unit: 'ng',
     },
-    selen: {
-      value: 0.8,
+    Selen: {
+      veggieValue: 0.8,
       unit: 'µg',
     },
-    vitA: {
-      value: 795,
+    VitA: {
+      veggieValue: 795,
       unit: 'µg',
     },
-    vitB2: {
-      value: 202,
+    VitB2: {
+      veggieValue: 202,
       unit: 'µg',
     },
-    folsäure: {
-      value: 154,
+    Folsäure: {
+      veggieValue: 154,
       unit: 'µg',
     },
   },
@@ -42,40 +42,40 @@ export const veggies = [
   {
     veggieName: 'Zwiebel (getr.)',
 
-    magnesium: {
-      value: 0,
+    Magnesium: {
+      veggieValue: 0,
       unit: '-',
     },
-    calcium: {
-      value: 162,
+    Kalzium: {
+      veggieValue: 162,
       unit: 'mg',
     },
-    eisen: {
-      value: 3.3,
+    Eisen: {
+      veggieValue: 3.3,
       unit: 'mg',
     },
-    zink: {
-      value: 0,
+    Zink: {
+      veggieValue: 0,
       unit: '-',
     },
-    jod: {
-      value: 0,
+    Jod: {
+      veggieValue: 0,
       unit: '-',
     },
-    selen: {
-      value: 0,
+    Selen: {
+      veggieValue: 0,
       unit: '-',
     },
-    vitA: {
-      value: 43,
+    VitA: {
+      veggieValue: 43,
       unit: 'µg',
     },
-    vitB2: {
-      value: 180,
+    VitB2: {
+      veggieValue: 180,
       unit: 'µg',
     },
-    folsäure: {
-      value: 110,
+    Folsäure: {
+      veggieValue: 110,
       unit: 'µg',
     },
   },
@@ -83,41 +83,41 @@ export const veggies = [
   {
     veggieName: 'Brokkoli',
 
-    magnesium: {
-      value: 24,
+    Magnesium: {
+      veggieValue: 24,
       unit: 'mg',
     },
-    calcium: {
-      value: 58,
+    Kalzium: {
+      veggieValue: 58,
       unit: 'mg',
     },
-    eisen: {
-      value: 0.8,
+    Eisen: {
+      veggieValue: 0.8,
       unit: 'mg',
     },
 
-    zink: {
-      value: 0,
+    Zink: {
+      veggieValue: 0,
       unit: '-',
     },
-    jod: {
-      value: 0,
+    Jod: {
+      veggieValue: 0,
       unit: '-',
     },
-    selen: {
-      value: 0,
+    Selen: {
+      veggieValue: 0,
       unit: '-',
     },
-    vitA: {
-      value: 70,
+    VitA: {
+      veggieValue: 70,
       unit: 'µg',
     },
-    vitB2: {
-      value: 200,
+    VitB2: {
+      veggieValue: 200,
       unit: 'µg',
     },
-    folsäure: {
-      value: 0,
+    Folsäure: {
+      veggieValue: 0,
       unit: '-',
     },
   },

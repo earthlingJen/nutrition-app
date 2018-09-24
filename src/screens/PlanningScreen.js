@@ -23,42 +23,69 @@ const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   align-items: center;
-  margin-left: 5%;
 `
 const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
 `
+let sum = 0
 
 export default class PlanningScreen extends Component {
   static propTypes = {
     selectedNutrition: PropTypes.object,
     addToPlate: PropTypes.func,
+    veggies: PropTypes.array,
+    nutriSum: PropTypes.number,
+    updateNutriSum: PropTypes.func,
+  }
+
+  addValue() {
+    // const startValue = 0
+    // console.log(startValue)
+  }
+
+  renderFoodTiles() {
+    const { veggies } = this.props
+
+    return veggies.map((veggie, index) => {
+      const mappedVeggie = veggie[this.props.selectedNutrition.nutriName]
+
+      return (
+        <FoodTile
+          key={index}
+          veggieName={veggie.veggieName}
+          veggieIcon="icon"
+          veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
+          onClick={() => {
+            console.log('angeklickt: ' + veggie.veggieName)
+            console.log('addiert: ' + (sum = sum + mappedVeggie.veggieValue))
+
+            this.props.updateNutriSum(mappedVeggie.veggieValue)
+          }}
+        />
+      )
+    })
   }
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
     return (
       <React.Fragment>
-        <StyledHeader>Plane- {nutriName}</StyledHeader>
+        <StyledHeader>Plane - {nutriName}</StyledHeader>
 
         <StyledSubHeader>
           <h5>Kreis</h5>
           <NutritionTile
             nutriName={nutriName}
-            nutriValue={nutriValue}
+            nutriValue={this.props.nutriSum + ' / ' + nutriValue}
             nutriUnit={nutriUnit}
           />
-          <h5 style={{ border: 'solid 1px' }}>Obst</h5>
+          <h5 style={{ border: 'solid 1px' }}>Gemüse</h5>
         </StyledSubHeader>
 
         <StyledMain>
-          <img src={plate} alt="plate" />
-          <FoodBar>
-            <FoodTile />
-            <FoodTile />
-            <FoodTile />
-          </FoodBar>
+          <img src={plate} style={{ margin: 'auto' }} alt="plate" />
+          <FoodBar>{this.renderFoodTiles()}</FoodBar>
         </StyledMain>
       </React.Fragment>
     )

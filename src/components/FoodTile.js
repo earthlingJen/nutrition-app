@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const size = 70
 
@@ -14,7 +15,7 @@ const StyledTile = styled.div`
   width: ${size}px;
   height: ${size}px;
   padding: 2px;
-  font-size: 10px;
+  font-size: 9px;
 
   &:hover {
     background: grey;
@@ -22,13 +23,19 @@ const StyledTile = styled.div`
 `
 
 export default class FoodTile extends Component {
-  static propTypes = {}
+  static propTypes = {
+    onClick: PropTypes.func,
+    veggieName: PropTypes.string,
+    veggieIcon: PropTypes.string,
+    veggieValue: PropTypes.string,
+  }
   render() {
+    const { veggieName, veggieValue, veggieIcon } = this.props
     return (
-      <StyledTile>
-        <div>Brokkoli</div>
-        <div>icon</div>
-        <div>300 mg</div>
+      <StyledTile onClick={this.props.onClick}>
+        <div>{veggieName}</div>
+        <div>{veggieIcon}</div>
+        <div>{veggieValue}</div>
       </StyledTile>
     )
   }
