@@ -36,10 +36,6 @@ export default class PlanningScreen extends Component {
     addToPlate: PropTypes.func,
   }
 
-  addToPlate() {
-    console.log('food to list')
-  }
-
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
     return (
@@ -53,13 +49,13 @@ export default class PlanningScreen extends Component {
             nutriValue={nutriValue}
             nutriUnit={nutriUnit}
           />
-          <h5 style={{ border: 'solid 1px' }}>Gemüse</h5>
+          <h5 style={{ border: 'solid 1px' }}>Obst</h5>
         </StyledSubHeader>
 
         <StyledMain>
           <img src={plate} alt="plate" />
           <FoodBar>
-            {/* <FoodTile onClick={addToPlate()} /> */}
+            <FoodTile />
             <FoodTile />
             <FoodTile />
           </FoodBar>
