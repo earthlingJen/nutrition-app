@@ -92,7 +92,11 @@ export default class PlanningScreen extends Component {
           <h5>Kreis</h5>
           <NutritionTile
             nutriName={nutriName}
-            nutriValue={this.props.nutriSum[nutriName] + ' / ' + nutriValue}
+            nutriValue={
+              Number.parseFloat(this.props.nutriSum[nutriName]).toPrecision(4) +
+              ' / ' +
+              nutriValue
+            }
             nutriUnit={nutriUnit}
           />
           <h5 style={{ border: 'solid 1px' }}>Gemüse</h5>
