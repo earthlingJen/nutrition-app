@@ -24,7 +24,7 @@ const StyledTile = styled.div`
 export default class NutritionTile extends Component {
   static propTypes = {
     nutriName: PropTypes.string,
-    nutriValue: PropTypes.string,
+    nutriValue: PropTypes.any,
     nutriUnit: PropTypes.string,
   }
   render() {

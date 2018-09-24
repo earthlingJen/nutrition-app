@@ -28,6 +28,12 @@ const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
 `
+
+const StyledList = styled.ul`
+  position: relative;
+  bottom: 50px;
+`
+
 let sum = 0
 
 export default class PlanningScreen extends Component {
@@ -35,13 +41,21 @@ export default class PlanningScreen extends Component {
     selectedNutrition: PropTypes.object,
     addToPlate: PropTypes.func,
     veggies: PropTypes.array,
-    nutriSum: PropTypes.number,
+    nutriSum: PropTypes.object,
     updateNutriSum: PropTypes.func,
+    pickedFood: PropTypes.array,
+    updatePickedFood: PropTypes.func,
   }
 
   addValue() {
     // const startValue = 0
     // console.log(startValue)
+  }
+
+  renderList() {
+    return this.props.pickedFood.map((food, index) => {
+      return <li key={index}>100g {food}</li>
+    })
   }
 
   renderFoodTiles() {
@@ -60,7 +74,8 @@ export default class PlanningScreen extends Component {
             console.log('angeklickt: ' + veggie.veggieName)
             console.log('addiert: ' + (sum = sum + mappedVeggie.veggieValue))
 
-            this.props.updateNutriSum(mappedVeggie.veggieValue)
+            this.props.updateNutriSum(veggie)
+            this.props.updatePickedFood(veggie.veggieName)
           }}
         />
       )
@@ -77,7 +92,7 @@ export default class PlanningScreen extends Component {
           <h5>Kreis</h5>
           <NutritionTile
             nutriName={nutriName}
-            nutriValue={this.props.nutriSum + ' / ' + nutriValue}
+            nutriValue={this.props.nutriSum[nutriName] + ' / ' + nutriValue}
             nutriUnit={nutriUnit}
           />
           <h5 style={{ border: 'solid 1px' }}>Gemüse</h5>
@@ -85,8 +100,10 @@ export default class PlanningScreen extends Component {
 
         <StyledMain>
           <img src={plate} style={{ margin: 'auto' }} alt="plate" />
+
           <FoodBar>{this.renderFoodTiles()}</FoodBar>
         </StyledMain>
+        <StyledList>{this.renderList()}</StyledList>
       </React.Fragment>
     )
   }
