@@ -22,6 +22,7 @@ const StyledDiv = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 150px;
+  min-width: 192px;
 `
 
 const StyledSpan = styled.span`

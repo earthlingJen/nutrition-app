@@ -12,7 +12,7 @@ const initialState = /*load('app') ||*/ {
   },
   selectedNutrition: {
     nutriName: 'Magnesium',
-    nutriValue: 1000,
+    nutriValue: 300,
     nutriUnit: 'mg',
   },
   nutriSum: {

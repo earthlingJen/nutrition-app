@@ -12,7 +12,7 @@ const StyledTile = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  max-width: ${size}px;
+  min-width: ${size}px;
   height: ${size}px;
   padding: 2px;
 

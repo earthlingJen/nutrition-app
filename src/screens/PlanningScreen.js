@@ -74,7 +74,10 @@ export default class PlanningScreen extends Component {
           veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
           onClick={() => {
             console.log('angeklickt: ' + veggie.veggieName)
-            console.log('addiert: ' + (sum = sum + mappedVeggie.veggieValue))
+            console.log(
+              'addiert in einfache Konstante: ' +
+                (sum = sum + mappedVeggie.veggieValue)
+            )
 
             updateNutriSum(veggie)
             updatePickedFood(veggie.veggieName)
@@ -100,7 +103,6 @@ export default class PlanningScreen extends Component {
               nutriValue
             }
             nutriUnit={nutriUnit}
-            style={{ width: 'auto' }}
           />
           <h5 style={{ border: 'solid 1px' }}>Gemüse</h5>
         </StyledSubHeader>

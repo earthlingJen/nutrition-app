@@ -7,7 +7,10 @@ const StyledSelect = styled.select`
   font-size: 15px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  padding-left: 5%;
+  padding: 0 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 `
 
 export default class AgeSelect extends Component {

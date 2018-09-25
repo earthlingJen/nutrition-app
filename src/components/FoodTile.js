@@ -6,6 +6,7 @@ const size = 70
 
 const StyledTile = styled.div`
   margin: 5px auto;
+  background: lightgrey;
   border: solid grey 1px;
   border-radius: 5px;
   display: flex;
