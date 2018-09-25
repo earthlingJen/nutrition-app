@@ -62,7 +62,7 @@ export default class NutritionScreen extends Component {
   }
 
   renderNutriTiles() {
-    const { user, nutriNeeds } = this.props
+    const { user, nutriNeeds, saveValue } = this.props
     const { sex, age } = user
 
     return nutriNeeds.map((nutrition, index) => {
@@ -76,7 +76,7 @@ export default class NutritionScreen extends Component {
           to="/planning"
           key={index}
           style={{ color: 'black', textDecoration: 'none' }}
-          onClick={() => this.props.saveValue(selectedNutrition)}
+          onClick={() => saveValue(selectedNutrition)}
         >
           <NutritionTile
             key={index}

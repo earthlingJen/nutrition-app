@@ -12,7 +12,7 @@ const StyledTile = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /*width: ${size}px;*/
+  max-width: ${size}px;
   height: ${size}px;
   padding: 2px;
 
@@ -28,12 +28,12 @@ export default class NutritionTile extends Component {
     nutriUnit: PropTypes.string,
   }
   render() {
-    //console.log(this.props.nutriName)
+    const { nutriName, nutriValue, nutriUnit } = this.props
     return (
       <StyledTile>
-        <div>{this.props.nutriName}</div>
-        <div>{this.props.nutriValue}</div>
-        <div>{this.props.nutriUnit}</div>
+        <div>{nutriName}</div>
+        <div>{nutriValue}</div>
+        <div>{nutriUnit}</div>
       </StyledTile>
     )
   }

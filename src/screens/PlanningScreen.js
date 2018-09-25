@@ -1,5 +1,5 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react'
-
 import NutritionTile from '../components/NutritionTile'
 import FoodTile from '../components/FoodTile'
 import PropTypes from 'prop-types'
@@ -49,16 +49,22 @@ export default class PlanningScreen extends Component {
   }
 
   renderList() {
-    return this.props.pickedFood.map((food, index) => {
+    const { pickedFood } = this.props
+    return pickedFood.map((food, index) => {
       return <li key={index}>100g {food}</li>
     })
   }
 
   renderFoodTiles() {
-    const { veggies } = this.props
+    const {
+      veggies,
+      selectedNutrition,
+      updateNutriSum,
+      updatePickedFood,
+    } = this.props
 
     return veggies.map((veggie, index) => {
-      const mappedVeggie = veggie[this.props.selectedNutrition.nutriName]
+      const mappedVeggie = veggie[selectedNutrition.nutriName]
 
       return (
         <FoodTile
@@ -70,8 +76,8 @@ export default class PlanningScreen extends Component {
             console.log('angeklickt: ' + veggie.veggieName)
             console.log('addiert: ' + (sum = sum + mappedVeggie.veggieValue))
 
-            this.props.updateNutriSum(veggie)
-            this.props.updatePickedFood(veggie.veggieName)
+            updateNutriSum(veggie)
+            updatePickedFood(veggie.veggieName)
           }}
         />
       )
@@ -80,6 +86,7 @@ export default class PlanningScreen extends Component {
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
+    const { nutriSum } = this.props
     return (
       <React.Fragment>
         <StyledHeader>Plane - {nutriName}</StyledHeader>
@@ -88,11 +95,12 @@ export default class PlanningScreen extends Component {
           <NutritionTile
             nutriName={nutriName}
             nutriValue={
-              Number.parseFloat(this.props.nutriSum[nutriName]).toPrecision(4) +
+              Number.parseFloat(nutriSum[nutriName]).toFixed(2) +
               ' / ' +
               nutriValue
             }
             nutriUnit={nutriUnit}
+            style={{ width: 'auto' }}
           />
           <h5 style={{ border: 'solid 1px' }}>Gemüse</h5>
         </StyledSubHeader>
