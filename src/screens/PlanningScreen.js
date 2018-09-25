@@ -9,7 +9,8 @@ import plate from '../plate.png'
 const StyledSubHeader = styled.div`
   display: flex;
   align-items: center;
-  margin: 20px 5%;
+  justify-content: space-between;
+  margin: 20px 20px 0;
 `
 const StyledHeader = styled.h1`
   background: #50e379;
@@ -21,7 +22,7 @@ const StyledHeader = styled.h1`
 `
 const StyledMain = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 2fr 1fr;
   align-items: center;
 `
 const FoodBar = styled.div`
@@ -45,11 +46,6 @@ export default class PlanningScreen extends Component {
     updateNutriSum: PropTypes.func,
     pickedFood: PropTypes.array,
     updatePickedFood: PropTypes.func,
-  }
-
-  addValue() {
-    // const startValue = 0
-    // console.log(startValue)
   }
 
   renderList() {
@@ -87,7 +83,6 @@ export default class PlanningScreen extends Component {
     return (
       <React.Fragment>
         <StyledHeader>Plane - {nutriName}</StyledHeader>
-
         <StyledSubHeader>
           <h5>Kreis</h5>
           <NutritionTile
@@ -105,7 +100,10 @@ export default class PlanningScreen extends Component {
         <StyledMain>
           <img src={plate} style={{ margin: 'auto' }} alt="plate" />
 
-          <FoodBar>{this.renderFoodTiles()}</FoodBar>
+          <FoodBar>
+            <p style={{ textAlign: 'center' }}>pro 100g</p>
+            {this.renderFoodTiles()}
+          </FoodBar>
         </StyledMain>
         <StyledList>{this.renderList()}</StyledList>
       </React.Fragment>

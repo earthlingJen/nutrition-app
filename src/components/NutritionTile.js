@@ -5,14 +5,14 @@ import PropTypes from 'prop-types'
 const size = 102
 
 const StyledTile = styled.div`
-  margin: 5px auto;
+  margin: 5px 2px;
   border: solid grey 1px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: ${size}px;
+  /*width: ${size}px;*/
   height: ${size}px;
   padding: 2px;
 
