@@ -103,6 +103,37 @@ describe('reducer', () => {
       const action = {
         type: ACTIONS.UPDATE_NUTRI_SUM,
         payload: {
+          Magnesium: {
+            veggieValue: 0,
+          },
+          Kalzium: {
+            veggieValue: 0,
+          },
+          Eisen: {
+            veggieValue: 12,
+          },
+          Zink: {
+            veggieValue: 0,
+          },
+          Jod: {
+            veggieValue: 0,
+          },
+          Selen: {
+            veggieValue: 0,
+          },
+          VitA: {
+            veggieValue: 0,
+          },
+          VitB2: {
+            veggieValue: 0,
+          },
+          Folsäure: {
+            veggieValue: 0,
+          },
+        },
+      }
+      expect(reducer(state, action)).toEqual({
+        nutriSum: {
           Magnesium: 0,
           Kalzium: 0,
           Eisen: 12,
@@ -112,21 +143,6 @@ describe('reducer', () => {
           VitA: 0,
           VitB2: 0,
           Folsäure: 0,
-        },
-      }
-      expect(reducer(state, action)).toEqual({
-        nutriSum: {
-          Magnesium:
-            state.nutriSum.Magnesium + action.payload.Magnesium.veggieValue,
-          Kalzium: state.nutriSum.Kalzium + action.payload.Kalzium.veggieValue,
-          Eisen: state.nutriSum.Eisen + action.payload.Kalzium.veggieValue,
-          Zink: state.nutriSum.Zink + action.payload.Zink.veggieValue,
-          Jod: state.nutriSum.Jod + action.payload.Jod.veggieValue,
-          Selen: state.nutriSum.Selen + action.payload.Selen.veggieValue,
-          VitA: state.nutriSum.VitA + action.payload.VitA.veggieValue,
-          VitB2: state.nutriSum.VitB2 + action.payload.VitB2.veggieValue,
-          Folsäure:
-            state.nutriSum.Folsäure + action.payload.Folsäure.veggieValue,
         },
       })
     })
