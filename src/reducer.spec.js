@@ -83,4 +83,69 @@ describe('reducer', () => {
       })
     })
   })
+
+  describe(ACTIONS.UPDATE_NUTRI_SUM, () => {
+    it('changes nutriSum', () => {
+      const state = {
+        nutriSum: {
+          Magnesium: 0,
+          Kalzium: 0,
+          Eisen: 0,
+          Zink: 0,
+          Jod: 0,
+          Selen: 0,
+          VitA: 0,
+          VitB2: 0,
+          Folsäure: 0,
+        },
+      }
+
+      const action = {
+        type: ACTIONS.UPDATE_NUTRI_SUM,
+        payload: {
+          Magnesium: 0,
+          Kalzium: 0,
+          Eisen: 12,
+          Zink: 0,
+          Jod: 0,
+          Selen: 0,
+          VitA: 0,
+          VitB2: 0,
+          Folsäure: 0,
+        },
+      }
+      expect(reducer(state, action)).toEqual({
+        nutriSum: {
+          Magnesium:
+            state.nutriSum.Magnesium + action.payload.Magnesium.veggieValue,
+          Kalzium: state.nutriSum.Kalzium + action.payload.Kalzium.veggieValue,
+          Eisen: state.nutriSum.Eisen + action.payload.Kalzium.veggieValue,
+          Zink: state.nutriSum.Zink + action.payload.Zink.veggieValue,
+          Jod: state.nutriSum.Jod + action.payload.Jod.veggieValue,
+          Selen: state.nutriSum.Selen + action.payload.Selen.veggieValue,
+          VitA: state.nutriSum.VitA + action.payload.VitA.veggieValue,
+          VitB2: state.nutriSum.VitB2 + action.payload.VitB2.veggieValue,
+          Folsäure:
+            state.nutriSum.Folsäure + action.payload.Folsäure.veggieValue,
+        },
+      })
+    })
+  })
+
+  describe(ACTIONS.UPDATE_PICKED_FOOD, () => {
+    it('updates picked food', () => {
+      const state = {
+        pickedFood: ['Brokkoli'],
+      }
+
+      const action = {
+        type: ACTIONS.UPDATE_PICKED_FOOD,
+        payload: 'Spinat',
+      }
+
+      expect(reducer(state, action)).toEqual({
+        pickedFood: ['Brokkoli', 'Spinat'],
+      })
+    })
+  })
 })

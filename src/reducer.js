@@ -55,13 +55,6 @@ export default function reducer(state = initialState, action = {}) {
       selectedNutrition: action.payload,
     }
 
-  case ACTIONS.ADD_TO_PLATE:
-    // console.log('food to list')
-    return {
-      ...state,
-      selectedNutrition: action.payload,
-    }
-
   case ACTIONS.UPDATE_NUTRI_SUM:
     return {
       ...state,

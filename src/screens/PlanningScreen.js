@@ -40,7 +40,6 @@ let sum = 0
 export default class PlanningScreen extends Component {
   static propTypes = {
     selectedNutrition: PropTypes.object,
-    addToPlate: PropTypes.func,
     veggies: PropTypes.array,
     nutriSum: PropTypes.object,
     updateNutriSum: PropTypes.func,
