@@ -54,4 +54,33 @@ describe('reducer', () => {
       })
     })
   })
+
+  describe(ACTIONS.SAVE_VALUE, () => {
+    it('saves the value', () => {
+      const state = {
+        selectedNutrition: {
+          nutriName: 'Magnesium',
+          nutriValue: 300,
+          nutriUnit: 'mg',
+        },
+      }
+
+      const action = {
+        type: ACTIONS.SAVE_VALUE,
+        payload: {
+          nutriName: 'Eisen',
+          nutriValue: 15,
+          nutriUnit: 'mg',
+        },
+      }
+
+      expect(reducer(state, action)).toEqual({
+        selectedNutrition: {
+          nutriName: 'Eisen',
+          nutriValue: 15,
+          nutriUnit: 'mg',
+        },
+      })
+    })
+  })
 })
