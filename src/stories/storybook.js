@@ -8,6 +8,7 @@ import FoodTile from '../components/FoodTile'
 import NutritionTile from '../components/NutritionTile'
 import SexSelect from '../components/SexSelect'
 import { injectGlobal } from 'styled-components'
+import { action } from '@storybook/addon-actions'
 
 injectGlobal`
   * {
@@ -21,7 +22,9 @@ injectGlobal`
     
   }
 `
-storiesOf('AgeSelect', module).add('with text', () => <AgeSelect />)
+storiesOf('AgeSelect', module).add('with text', () => (
+  <AgeSelect setSelectAge={action('setSelectAge(event.target.value)')} />
+))
 
 storiesOf('FoodTile', module)
   .addDecorator(withKnobs)
@@ -43,4 +46,6 @@ storiesOf('NutritionTile', module)
     />
   ))
 
-storiesOf('SexSelect', module).add('with text', () => <SexSelect />)
+storiesOf('SexSelect', module).add('with text', () => (
+  <SexSelect setSelectSex={action('setSelectSex(event.target.value)')} />
+))
