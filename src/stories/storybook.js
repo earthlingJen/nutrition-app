@@ -1,13 +1,14 @@
 /* global module */
 
 import React from 'react'
-
 import { storiesOf } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs/react'
-import Header from '../components/Header'
+import { withKnobs, text, number } from '@storybook/addon-knobs/react'
+import AgeSelect from '../components/AgeSelect'
+import FoodTile from '../components/FoodTile'
 import NutritionTile from '../components/NutritionTile'
-
+import SexSelect from '../components/SexSelect'
 import { injectGlobal } from 'styled-components'
+import { action } from '@storybook/addon-actions'
 
 injectGlobal`
   * {
@@ -21,11 +22,30 @@ injectGlobal`
     
   }
 `
+storiesOf('AgeSelect', module).add('with text', () => (
+  <AgeSelect setSelectAge={action('setSelectAge(event.target.value)')} />
+))
 
-storiesOf('Header', module)
+storiesOf('FoodTile', module)
   .addDecorator(withKnobs)
-  .add('with text', () => <Header />)
+  .add('with text', () => (
+    <FoodTile
+      veggieName={text('Veggie', 'Spinat')}
+      veggieIcon="icon"
+      veggieValue={number('VeggieValue: ', 300) + text('unit', ' mg')}
+    />
+  ))
 
 storiesOf('NutritionTile', module)
   .addDecorator(withKnobs)
-  .add('with text', () => <NutritionTile />)
+  .add('with text', () => (
+    <NutritionTile
+      nutriName={text('NutritionName: ', 'Magnesium')}
+      nutriValue={number('NutritionValue: ', 300)}
+      nutriUnit={text('NutritionUnit: ', 'mg')}
+    />
+  ))
+
+storiesOf('SexSelect', module).add('with text', () => (
+  <SexSelect setSelectSex={action('setSelectSex(event.target.value)')} />
+))

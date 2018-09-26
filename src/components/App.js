@@ -4,12 +4,17 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { applyMiddleware, createStore } from 'redux'
 
 import NutritionScreenContainer from '../containers/NutritionScreenContainer'
+import PlanningScreenContainer from '../containers/PlanningScreenContainer'
 
 import { saveToLocalStorage } from '../middlewares'
 import reducer from '../reducer'
 import thunk from 'redux-thunk'
 
-const store = createStore(reducer, applyMiddleware(saveToLocalStorage, thunk))
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(saveToLocalStorage, thunk)
+)
 
 class App extends Component {
   render() {
@@ -22,6 +27,7 @@ class App extends Component {
               path="/nutrition"
               component={NutritionScreenContainer}
             />
+            <Route exact path="/planning" component={PlanningScreenContainer} />
           </div>
         </Provider>
       </Router>

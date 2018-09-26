@@ -1,8 +1,19 @@
 import { connect } from 'react-redux'
 import NutritionScreen from '../screens/NutritionScreen'
+import { setSelectSex, setSelectAge, saveValue } from '../actions'
 
-//const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+  user: state.user,
+  nutriNeeds: state.nutriNeeds,
+})
 
-//const mapDispatchToProps = dispatch => ({})
+const mapDispatchToProps = dispatch => ({
+  setSelectSex: value => dispatch(setSelectSex(value)),
+  setSelectAge: value => dispatch(setSelectAge(value)),
+  saveValue: value => dispatch(saveValue(value)),
+})
 
-export default connect(null)(NutritionScreen)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NutritionScreen)
