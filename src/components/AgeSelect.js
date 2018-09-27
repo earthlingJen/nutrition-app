@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import propTypes from 'prop-types'
 
-const StyledSelect = styled.select`
+export const StyledSelect = styled.select`
   border: solid 1px lightblue;
   font-size: 15px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',

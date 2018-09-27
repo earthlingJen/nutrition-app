@@ -2,10 +2,12 @@
 import ACTIONS from './actions'
 import { nutriNeeds } from './data/NutriNeeds'
 import { veggies } from './data/Veggies'
+import { fruits } from './data/Fruits'
 
 const initialState = /*load('app') ||*/ {
   nutriNeeds: nutriNeeds,
   veggies: veggies,
+  fruits: fruits,
   user: {
     sex: 'female',
     age: '25to50',
@@ -79,6 +81,10 @@ export default function reducer(state = initialState, action = {}) {
       pickedFood: [...state.pickedFood, action.payload],
     }
 
+  case ACTIONS.SET_SELECT_FOOD:
+    return {
+      ...state,
+    }
   default:
     return state
   }

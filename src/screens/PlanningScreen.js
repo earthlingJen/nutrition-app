@@ -5,6 +5,7 @@ import FoodTile from '../components/FoodTile'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import plate from '../plate.png'
+import FoodSelect from '../components/FoodSelect'
 
 const StyledSubHeader = styled.div`
   display: flex;
@@ -20,19 +21,38 @@ const StyledHeader = styled.h1`
   display: flex;
   justify-content: center;
 `
+
+const StyledP = styled.p`
+  text-align: right;
+  margin: 0 20px;
+  position: relative;
+  bottom: 20px;
+`
+
 const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  align-items: center;
+  height: 70vh;
+  justify-content: center;
 `
+const StyledPlate = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 72px;
+`
+
 const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 `
+const Scroller = styled.div``
 
 const StyledList = styled.ul`
   position: relative;
-  bottom: 50px;
+  top: 1px;
+  padding-left: 0;
 `
 
 let sum = 0
@@ -41,10 +61,12 @@ export default class PlanningScreen extends Component {
   static propTypes = {
     selectedNutrition: PropTypes.object,
     veggies: PropTypes.array,
+    fruits: PropTypes.array,
     nutriSum: PropTypes.object,
     updateNutriSum: PropTypes.func,
     pickedFood: PropTypes.array,
     updatePickedFood: PropTypes.func,
+    setSelectFood: PropTypes.func,
   }
 
   renderList() {
@@ -57,11 +79,14 @@ export default class PlanningScreen extends Component {
   renderFoodTiles() {
     const {
       veggies,
+      //friuts,
       selectedNutrition,
       updateNutriSum,
       updatePickedFood,
     } = this.props
 
+    // switch (foodType === veggies) {
+    // case veggie:
     return veggies.map((veggie, index) => {
       const mappedVeggie = veggie[selectedNutrition.nutriName]
 
@@ -84,11 +109,12 @@ export default class PlanningScreen extends Component {
         />
       )
     })
+    //}
   }
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
-    const { nutriSum } = this.props
+    const { nutriSum, setSelectFood } = this.props
     return (
       <React.Fragment>
         <StyledHeader>Plane - {nutriName}</StyledHeader>
@@ -103,18 +129,33 @@ export default class PlanningScreen extends Component {
             }
             nutriUnit={nutriUnit}
           />
-          <h5 style={{ border: 'solid 1px' }}>Gemüse</h5>
+
+          <FoodSelect setSelectFood={setSelectFood} />
         </StyledSubHeader>
-
+        <StyledP>pro 100g</StyledP>
         <StyledMain>
-          <img src={plate} style={{ margin: 'auto' }} alt="plate" />
-
+          <StyledPlate>
+            <img src={plate} alt="plate" style={{ width: '80%' }} />
+            <StyledList>{this.renderList()}</StyledList>
+          </StyledPlate>
           <FoodBar>
-            <p style={{ textAlign: 'center' }}>pro 100g</p>
-            {this.renderFoodTiles()}
+            <Scroller>
+              {this.renderFoodTiles()}
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile />
+              <FoodTile veggieName="test" />
+            </Scroller>
           </FoodBar>
         </StyledMain>
-        <StyledList>{this.renderList()}</StyledList>
       </React.Fragment>
     )
   }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import PlanningScreen from '../screens/PlanningScreen'
-import { updateNutriSum, updatePickedFood } from '../actions'
+import { updateNutriSum, updatePickedFood, setSelectFood } from '../actions'
 
 const mapStateToProps = state => ({
   selectedNutrition: state.selectedNutrition,
@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   updateNutriSum: value => dispatch(updateNutriSum(value)),
   updatePickedFood: value => dispatch(updatePickedFood(value)),
+  setSelectFood: value => dispatch(setSelectFood(value)),
 })
 
 export default connect(
