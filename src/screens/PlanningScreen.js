@@ -7,12 +7,6 @@ import styled from 'styled-components'
 import plate from '../plate.png'
 import FoodSelect from '../components/FoodSelect'
 
-const StyledSubHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px 20px 0;
-`
 const StyledHeader = styled.h1`
   background: #50e379;
   color: white;
@@ -20,6 +14,12 @@ const StyledHeader = styled.h1`
   margin: -10px;
   display: flex;
   justify-content: center;
+`
+const StyledSubHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 20px 0;
 `
 
 const StyledP = styled.p`
@@ -41,18 +41,21 @@ const StyledPlate = styled.div`
   align-items: center;
   padding-top: 72px;
 `
+const StyledContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
+const StyledList = styled.ul`
+  overflow-y: scroll;
+  height: 42vh;
+  width: 55vw;
+  box-shadow: 0 2px 10px grey;
+`
 const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-`
-const Scroller = styled.div``
-
-const StyledList = styled.ul`
-  position: relative;
-  top: 1px;
-  padding-left: 0;
 `
 
 let sum = 0
@@ -134,12 +137,41 @@ export default class PlanningScreen extends Component {
         </StyledSubHeader>
         <StyledP>pro 100g</StyledP>
         <StyledMain>
-          <StyledPlate>
-            <img src={plate} alt="plate" style={{ width: '80%' }} />
-            <StyledList>{this.renderList()}</StyledList>
-          </StyledPlate>
+          <div>
+            <StyledPlate>
+              <img src={plate} alt="plate" style={{ width: '80%' }} />
+            </StyledPlate>
+            <StyledContainer>
+              <StyledList>
+                {this.renderList()}
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+                <li>bla</li>
+              </StyledList>
+            </StyledContainer>
+          </div>
           <FoodBar>
-            <Scroller>
+            <div>
               {this.renderFoodTiles()}
               <FoodTile />
               <FoodTile />
@@ -153,7 +185,7 @@ export default class PlanningScreen extends Component {
               <FoodTile />
               <FoodTile />
               <FoodTile veggieName="test" />
-            </Scroller>
+            </div>
           </FoodBar>
         </StyledMain>
       </React.Fragment>
