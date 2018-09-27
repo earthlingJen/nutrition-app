@@ -160,7 +160,7 @@ describe('reducer', () => {
       }
 
       expect(reducer(state, action)).toEqual({
-        pickedFood: ['Brokkoli', 'Spinat'],
+        pickedFood: ['Spinat', 'Brokkoli'],
       })
     })
   })
