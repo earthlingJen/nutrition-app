@@ -5,7 +5,7 @@ import FoodTile from '../components/FoodTile'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import plate from '../plate.png'
-import FoodSelect from '../components/FoodSelect'
+import FoodTypeSelect from '../components/FoodTypeSelect'
 
 const StyledHeader = styled.h1`
   background: #50e379;
@@ -133,7 +133,7 @@ export default class PlanningScreen extends Component {
             nutriUnit={nutriUnit}
           />
 
-          <FoodSelect setSelectFood={setSelectFood} />
+          <FoodTypeSelect setSelectFood={setSelectFood} />
         </StyledSubHeader>
         <StyledP>pro 100g</StyledP>
         <StyledMain>
@@ -142,32 +142,7 @@ export default class PlanningScreen extends Component {
               <img src={plate} alt="plate" style={{ width: '80%' }} />
             </StyledPlate>
             <StyledContainer>
-              <StyledList>
-                {this.renderList()}
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-                <li>bla</li>
-              </StyledList>
+              <StyledList>{this.renderList()}</StyledList>
             </StyledContainer>
           </div>
           <FoodBar>

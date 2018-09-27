@@ -78,7 +78,7 @@ export default function reducer(state = initialState, action = {}) {
   case ACTIONS.UPDATE_PICKED_FOOD:
     return {
       ...state,
-      pickedFood: [...state.pickedFood, action.payload],
+      pickedFood: [action.payload, ...state.pickedFood],
     }
 
   case ACTIONS.SET_SELECT_FOOD:

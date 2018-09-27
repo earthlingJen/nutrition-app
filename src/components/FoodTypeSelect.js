@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyledSelect } from './AgeSelect'
 import propTypes from 'prop-types'
 
-export default class FoodSelect extends Component {
+export default class FoodTypeSelect extends Component {
   static propTypes = {
     setSelectFood: propTypes.func,
   }
