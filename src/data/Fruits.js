@@ -1,6 +1,7 @@
 export const fruits = [
   {
     veggieName: 'Aprikose(Marille) getr.',
+    veggieIcon: 'Aprikose',
     Magnesium: {
       veggieValue: 50,
       unit: 'mg',

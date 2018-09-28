@@ -29,6 +29,7 @@ const initialState = /*load('app') ||*/ {
     Folsäure: 0,
   },
   pickedFood: [],
+  renderItem: 'veggies', //besser: pickedFoodType
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -84,7 +85,9 @@ export default function reducer(state = initialState, action = {}) {
   case ACTIONS.SET_SELECT_FOOD:
     return {
       ...state,
+      renderItem: action.payload,
     }
+
   default:
     return state
   }

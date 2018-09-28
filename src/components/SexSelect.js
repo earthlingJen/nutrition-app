@@ -1,17 +1,6 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
-
-const StyledSelect = styled.select`
-  border: solid 1px lightblue;
-  font-size: 15px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  padding: 0 5px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-`
+import { StyledSelect } from './AgeSelect'
 
 export default class SexSelect extends Component {
   static propTypes = {

@@ -28,7 +28,6 @@ const StyledP = styled.p`
   position: relative;
   bottom: 20px;
 `
-
 const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -45,7 +44,6 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
 `
-
 const StyledList = styled.ul`
   overflow-y: scroll;
   height: 42vh;
@@ -57,9 +55,6 @@ const FoodBar = styled.div`
   flex-direction: column;
   overflow-y: scroll;
 `
-
-let sum = 0
-
 export default class PlanningScreen extends Component {
   static propTypes = {
     selectedNutrition: PropTypes.object,
@@ -72,6 +67,18 @@ export default class PlanningScreen extends Component {
     setSelectFood: PropTypes.func,
   }
 
+  state = {
+    renderItem: 'veggies',
+  }
+
+  setSelectFood = event => {
+    let { value } = event.target
+    console.log(value)
+    this.setState({
+      renderItem: value,
+    })
+  }
+
   renderList() {
     const { pickedFood } = this.props
     return pickedFood.map((food, index) => {
@@ -82,42 +89,58 @@ export default class PlanningScreen extends Component {
   renderFoodTiles() {
     const {
       veggies,
-      //friuts,
+      fruits,
       selectedNutrition,
       updateNutriSum,
       updatePickedFood,
+      setSelectFood,
     } = this.props
 
-    // switch (foodType === veggies) {
-    // case veggie:
-    return veggies.map((veggie, index) => {
-      const mappedVeggie = veggie[selectedNutrition.nutriName]
+    switch (this.state.renderItem) {
+    case 'veggies':
+      return veggies.map((veggie, index) => {
+        const mappedVeggie = veggie[selectedNutrition.nutriName]
 
-      return (
-        <FoodTile
-          key={index}
-          veggieName={veggie.veggieName}
-          veggieIcon={veggie.veggieIcon}
-          veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
-          onClick={() => {
-            console.log('angeklickt: ' + veggie.veggieName)
-            console.log(
-              'addiert in einfache Konstante: ' +
-                (sum = sum + mappedVeggie.veggieValue)
-            )
+        return (
+          <FoodTile
+            key={index}
+            veggieName={veggie.veggieName}
+            veggieIcon={veggie.veggieIcon}
+            veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
+            onClick={() => {
+              updateNutriSum(veggie)
+              updatePickedFood(veggie.veggieName)
+            }}
+          />
+        )
+      })
+    case 'fruits':
+      return fruits.map((fruit, index) => {
+        const mappedFruit = fruit[selectedNutrition.nutriName]
 
-            updateNutriSum(veggie)
-            updatePickedFood(veggie.veggieName)
-          }}
-        />
-      )
-    })
-    //}
+        return (
+          <FoodTile
+            key={index}
+            veggieName={fruit.fruitName}
+            veggieIcon={fruit.fruitIcon}
+            veggieValue={mappedFruit.FruitValue + ' ' + mappedFruit.unit}
+            onClick={() => {
+              updateNutriSum(fruit)
+              updatePickedFood(fruit.fruitName)
+            }}
+          />
+        )
+      })
+
+    default:
+      return console.log('error')
+    }
   }
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
-    const { nutriSum, setSelectFood } = this.props
+    const { nutriSum } = this.props
+
     return (
       <React.Fragment>
         <StyledHeader>Plane - {nutriName}</StyledHeader>
@@ -133,7 +156,7 @@ export default class PlanningScreen extends Component {
             nutriUnit={nutriUnit}
           />
 
-          <FoodTypeSelect setSelectFood={setSelectFood} />
+          <FoodTypeSelect setSelectFood={this.setSelectFood.bind(this)} />
         </StyledSubHeader>
         <StyledP>pro 100g</StyledP>
         <StyledMain>
