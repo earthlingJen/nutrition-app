@@ -164,4 +164,21 @@ describe('reducer', () => {
       })
     })
   })
+
+  describe(ACTIONS.SET_SELECT_FOOD, () => {
+    it('selectes food type', () => {
+      const state = {
+        pickedFoodType: 'Obst',
+      }
+
+      const action = {
+        type: ACTIONS.SET_SELECT_FOOD,
+        payload: 'Gemüse',
+      }
+
+      expect(reducer(state, action)).toEqual({
+        pickedFoodType: 'Gemüse',
+      })
+    })
+  })
 })
