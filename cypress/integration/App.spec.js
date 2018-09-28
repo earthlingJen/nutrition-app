@@ -1,6 +1,6 @@
 /* global cy */
 
-describe('App', () => {
+xdescribe('App', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/nutrition')
     cy.clearLocalStorage()
@@ -51,5 +51,51 @@ describe('App', () => {
       .contains('Plane - Eisen')
       .get('div')
       .contains('0.00 / 15')
+  })
+})
+
+describe('App', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/planning')
+    cy.clearLocalStorage()
+  })
+
+  it('shows header and text', () => {
+    cy.get('div')
+      .should('exist')
+      .should('contain', 'Plane')
+    cy.get('h1').should('exist')
+  })
+
+  it('changes food types', () => {
+    cy.get('select').select('Obst')
+  })
+
+  it('adds nutriValues', () => {
+    cy.get('div')
+      .contains('Spinat')
+      .click()
+      .get('div')
+      .contains('58.00 / 300')
+  })
+
+  it('adds food to list', () => {
+    cy.get('div')
+      .contains('Spinat')
+      .click()
+      .get('li')
+      .contains('100g Spinat')
+  })
+
+  it('adds next item on top of list', () => {
+    cy.get('div')
+      .contains('Spinat')
+      .click()
+      .get('div')
+      .contains('Brokkoli')
+      .click()
+      .get('li')
+      .first()
+      .contains('Brokkoli')
   })
 })
