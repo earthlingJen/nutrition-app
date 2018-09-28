@@ -1,6 +1,11 @@
+import broccoli from '../pics/broccoli.svg'
+import spinach from '../pics/spinach.svg'
+import onion from '../pics/onion.svg'
+
 export const veggies = [
   {
     veggieName: 'Spinat',
+    veggieIcon: spinach,
     Magnesium: {
       veggieValue: 58,
       unit: 'mg',
@@ -41,7 +46,7 @@ export const veggies = [
 
   {
     veggieName: 'Zwiebel (getr.)',
-
+    veggieIcon: onion,
     Magnesium: {
       veggieValue: 0,
       unit: '-',
@@ -82,7 +87,7 @@ export const veggies = [
 
   {
     veggieName: 'Brokkoli',
-
+    veggieIcon: broccoli,
     Magnesium: {
       veggieValue: 24,
       unit: 'mg',

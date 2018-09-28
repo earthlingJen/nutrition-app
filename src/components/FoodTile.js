@@ -35,7 +35,7 @@ export default class FoodTile extends Component {
     return (
       <StyledTile onClick={onClick}>
         <div>{veggieName}</div>
-        <div>{veggieIcon}</div>
+        <img src={veggieIcon} alt={veggieName} style={{ width: '20px' }} />
         <div>{veggieValue}</div>
       </StyledTile>
     )

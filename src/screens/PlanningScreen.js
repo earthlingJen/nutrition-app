@@ -4,7 +4,7 @@ import NutritionTile from '../components/NutritionTile'
 import FoodTile from '../components/FoodTile'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import plate from '../plate.png'
+import plate from '../pics/plate.svg'
 import FoodTypeSelect from '../components/FoodTypeSelect'
 
 const StyledHeader = styled.h1`
@@ -97,7 +97,7 @@ export default class PlanningScreen extends Component {
         <FoodTile
           key={index}
           veggieName={veggie.veggieName}
-          veggieIcon="icon"
+          veggieIcon={veggie.veggieIcon}
           veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
           onClick={() => {
             console.log('angeklickt: ' + veggie.veggieName)
@@ -163,6 +163,23 @@ export default class PlanningScreen extends Component {
             </div>
           </FoodBar>
         </StyledMain>
+        <div style={{ paddingTop: '10px' }}>
+          Broccoli icon made by{' '}
+          <a href="http://www.freepik.com" title="Freepik">
+            Freepik{' '}
+          </a>
+          from{' '}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com{' '}
+          </a>
+          is licensed by{' '}
+          <a
+            href="http://creativecommons.org/licenses/by/3.0/"
+            title="Creative Commons BY 3.0"
+          >
+            CC 3.0 BY
+          </a>
+        </div>
       </React.Fragment>
     )
   }
