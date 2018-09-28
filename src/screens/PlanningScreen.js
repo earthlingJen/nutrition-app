@@ -61,22 +61,11 @@ export default class PlanningScreen extends Component {
     veggies: PropTypes.array,
     fruits: PropTypes.array,
     nutriSum: PropTypes.object,
-    updateNutriSum: PropTypes.func,
+    updateNutriSum: PropTypes.func.isRequired,
     pickedFood: PropTypes.array,
-    updatePickedFood: PropTypes.func,
-    setSelectFood: PropTypes.func,
-  }
-
-  state = {
-    renderItem: 'veggies',
-  }
-
-  setSelectFood = event => {
-    let { value } = event.target
-    console.log(value)
-    this.setState({
-      renderItem: value,
-    })
+    updatePickedFood: PropTypes.func.isRequired,
+    setSelectFood: PropTypes.func.isRequired,
+    pickedFoodType: PropTypes.string,
   }
 
   renderList() {
@@ -93,10 +82,9 @@ export default class PlanningScreen extends Component {
       selectedNutrition,
       updateNutriSum,
       updatePickedFood,
-      setSelectFood,
     } = this.props
 
-    switch (this.state.renderItem) {
+    switch (this.props.pickedFoodType) {
     case 'veggies':
       return veggies.map((veggie, index) => {
         const mappedVeggie = veggie[selectedNutrition.nutriName]
@@ -114,32 +102,32 @@ export default class PlanningScreen extends Component {
           />
         )
       })
-    case 'fruits':
-      return fruits.map((fruit, index) => {
-        const mappedFruit = fruit[selectedNutrition.nutriName]
+    case 'fruits': //rename fruits and veggies in food!
+      return fruits.map((veggie, index) => {
+        const mappedFruit = veggie[selectedNutrition.nutriName]
 
         return (
           <FoodTile
             key={index}
-            veggieName={fruit.fruitName}
-            veggieIcon={fruit.fruitIcon}
-            veggieValue={mappedFruit.FruitValue + ' ' + mappedFruit.unit}
+            veggieName={veggie.veggieName}
+            veggieIcon={veggie.veggieIcon}
+            veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
             onClick={() => {
-              updateNutriSum(fruit)
-              updatePickedFood(fruit.fruitName)
+              updateNutriSum(veggie)
+              updatePickedFood(veggie.veggieName)
             }}
           />
         )
       })
 
     default:
-      return console.log('error')
+      return console.log('error - programming function in progress')
     }
   }
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
-    const { nutriSum } = this.props
+    const { nutriSum, setSelectFood } = this.props
 
     return (
       <React.Fragment>
@@ -156,7 +144,7 @@ export default class PlanningScreen extends Component {
             nutriUnit={nutriUnit}
           />
 
-          <FoodTypeSelect setSelectFood={this.setSelectFood.bind(this)} />
+          <FoodTypeSelect setSelectFood={setSelectFood} />
         </StyledSubHeader>
         <StyledP>pro 100g</StyledP>
         <StyledMain>

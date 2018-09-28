@@ -1,7 +1,9 @@
+import apricot from '../pics/apricot.svg'
+
 export const fruits = [
   {
     veggieName: 'Aprikose(Marille) getr.',
-    veggieIcon: 'Aprikose',
+    veggieIcon: apricot,
     Magnesium: {
       veggieValue: 50,
       unit: 'mg',

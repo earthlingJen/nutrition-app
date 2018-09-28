@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 //import { load } from './services'
 import ACTIONS from './actions'
 import { nutriNeeds } from './data/NutriNeeds'
@@ -29,7 +30,7 @@ const initialState = /*load('app') ||*/ {
     Folsäure: 0,
   },
   pickedFood: [],
-  renderItem: 'veggies', //besser: pickedFoodType
+  pickedFoodType: 'veggies', //besser: pickedFoodType
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -83,9 +84,10 @@ export default function reducer(state = initialState, action = {}) {
     }
 
   case ACTIONS.SET_SELECT_FOOD:
+    console.log(action.payload)
     return {
       ...state,
-      renderItem: action.payload,
+      pickedFoodType: action.payload,
     }
 
   default:

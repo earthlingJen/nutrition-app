@@ -5,9 +5,10 @@ import { updateNutriSum, updatePickedFood, setSelectFood } from '../actions'
 const mapStateToProps = state => ({
   selectedNutrition: state.selectedNutrition,
   veggies: state.veggies,
+  fruits: state.fruits,
   nutriSum: state.nutriSum,
   pickedFood: state.pickedFood,
-  renderItem: state.renderItem,
+  pickedFoodType: state.pickedFoodType,
 })
 
 const mapDispatchToProps = dispatch => ({

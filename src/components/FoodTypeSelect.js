@@ -4,15 +4,16 @@ import PropTypes from 'prop-types'
 
 export default class FoodTypeSelect extends Component {
   static propTypes = {
-    setSelectFood: PropTypes.func,
+    setSelectFood: PropTypes.func.isRequired,
   }
 
   render() {
+    const { setSelectFood } = this.props
     return (
       <React.Fragment>
         <StyledSelect
           id="food"
-          onChange={this.props.setSelectFood}
+          onChange={event => setSelectFood(event.target.value)}
           defaultValue="veggies"
         >
           <option value="veggies">Gemüse</option>
