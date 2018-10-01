@@ -15,6 +15,7 @@ const StyledHeader = styled.h1`
   display: flex;
   justify-content: center;
 `
+
 const StyledSubHeader = styled.div`
   display: flex;
   align-items: center;
