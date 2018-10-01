@@ -6,6 +6,7 @@ const mapStateToProps = state => ({
   selectedNutrition: state.selectedNutrition,
   veggies: state.veggies,
   fruits: state.fruits,
+  nuts: state.nuts,
   nutriSum: state.nutriSum,
   pickedFood: state.pickedFood,
   pickedFoodType: state.pickedFoodType,

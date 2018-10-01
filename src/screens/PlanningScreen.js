@@ -60,6 +60,7 @@ export default class PlanningScreen extends Component {
     selectedNutrition: PropTypes.object,
     veggies: PropTypes.array,
     fruits: PropTypes.array,
+    nuts: PropTypes.array,
     nutriSum: PropTypes.object,
     updateNutriSum: PropTypes.func.isRequired,
     pickedFood: PropTypes.array,
@@ -79,6 +80,7 @@ export default class PlanningScreen extends Component {
     const {
       veggies,
       fruits,
+      nuts,
       selectedNutrition,
       updateNutriSum,
       updatePickedFood,
@@ -102,6 +104,7 @@ export default class PlanningScreen extends Component {
           />
         )
       })
+
     case 'fruits': //rename fruits and veggies in food!
       return fruits.map((veggie, index) => {
         const mappedFruit = veggie[selectedNutrition.nutriName]
@@ -120,8 +123,26 @@ export default class PlanningScreen extends Component {
         )
       })
 
+    case 'nuts': //rename fruits and veggies in food!
+      return nuts.map((veggie, index) => {
+        const mappedFruit = veggie[selectedNutrition.nutriName]
+
+        return (
+          <FoodTile
+            key={index}
+            veggieName={veggie.veggieName}
+            veggieIcon={veggie.veggieIcon}
+            veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
+            onClick={() => {
+              updateNutriSum(veggie)
+              updatePickedFood(veggie.veggieName)
+            }}
+          />
+        )
+      })
+
     default:
-      return console.log('error - programming function in progress')
+      return console.log('no valid select value')
     }
   }
 

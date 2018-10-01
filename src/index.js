@@ -15,8 +15,8 @@ injectGlobal`
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16px;
-    
   }
+
 `
 
 ReactDOM.render(<App />, document.getElementById('root'))

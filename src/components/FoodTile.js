@@ -18,6 +18,10 @@ const StyledTile = styled.div`
   padding: 2px;
   font-size: 9px;
 
+  /* overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap;*/
+
   &:hover {
     background: grey;
   }

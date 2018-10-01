@@ -10,6 +10,7 @@ import SexSelect from '../components/SexSelect'
 import { injectGlobal } from 'styled-components'
 import { action } from '@storybook/addon-actions'
 import FoodTypeSelect from '../components/FoodTypeSelect'
+import spinach from '../pics/spinach.svg'
 
 injectGlobal`
   * {
@@ -32,7 +33,7 @@ storiesOf('FoodTile', module)
   .add('with text', () => (
     <FoodTile
       veggieName={text('Veggie', 'Spinat')}
-      veggieIcon="icon"
+      veggieIcon={spinach}
       veggieValue={number('VeggieValue: ', 300) + text('unit', ' mg')}
     />
   ))

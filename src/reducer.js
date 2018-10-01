@@ -4,11 +4,13 @@ import ACTIONS from './actions'
 import { nutriNeeds } from './data/NutriNeeds'
 import { veggies } from './data/Veggies'
 import { fruits } from './data/Fruits'
+import { nuts } from './data/Nuts'
 
 const initialState = /*load('app') ||*/ {
   nutriNeeds: nutriNeeds,
   veggies: veggies,
   fruits: fruits,
+  nuts: nuts,
   user: {
     sex: 'female',
     age: '25to50',
@@ -30,7 +32,7 @@ const initialState = /*load('app') ||*/ {
     Folsäure: 0,
   },
   pickedFood: [],
-  pickedFoodType: 'veggies', //besser: pickedFoodType
+  pickedFoodType: 'veggies',
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -84,7 +86,6 @@ export default function reducer(state = initialState, action = {}) {
     }
 
   case ACTIONS.SET_SELECT_FOOD:
-    console.log(action.payload)
     return {
       ...state,
       pickedFoodType: action.payload,
