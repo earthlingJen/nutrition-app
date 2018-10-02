@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import plate from '../pics/plate.svg'
 import FoodTypeSelect from '../components/FoodTypeSelect'
+import PieChart from '../components/PieChart'
 
 const StyledHeader = styled.h1`
   background: #50e379;
@@ -147,6 +148,14 @@ export default class PlanningScreen extends Component {
     }
   }
 
+  calculatePie() {
+    const { nutriName, nutriValue } = this.props.selectedNutrition
+
+    return Number.parseFloat(
+      (this.props.nutriSum[nutriName] / nutriValue) * 100
+    ).toFixed(0)
+  }
+
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
     const { nutriSum, setSelectFood } = this.props
@@ -155,13 +164,14 @@ export default class PlanningScreen extends Component {
       <React.Fragment>
         <StyledHeader>Plane - {nutriName}</StyledHeader>
         <StyledSubHeader>
-          <h5>Kreis</h5>
+          <PieChart number={nutriValue} value={this.calculatePie()} />
           <NutritionTile
             nutriName={nutriName}
             nutriValue={
-              Number.parseFloat(nutriSum[nutriName]).toFixed(2) +
-              ' / ' +
-              nutriValue
+              Number.parseFloat(nutriSum[nutriName]).toFixed(2)
+              // +
+              // ' / ' +
+              // nutriValue
             }
             nutriUnit={nutriUnit}
           />
