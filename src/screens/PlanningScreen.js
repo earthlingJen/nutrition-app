@@ -90,58 +90,76 @@ export default class PlanningScreen extends Component {
 
     switch (this.props.pickedFoodType) {
     case 'veggies':
-      return veggies.map((veggie, index) => {
-        const mappedVeggie = veggie[selectedNutrition.nutriName]
-
-        return (
-          <FoodTile
-            key={index}
-            veggieName={veggie.veggieName}
-            veggieIcon={veggie.veggieIcon}
-            veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
-            onClick={() => {
-              updateNutriSum(veggie)
-              updatePickedFood(veggie.veggieName)
-            }}
-          />
+      return veggies
+        .sort(
+          (a, b) =>
+            b[selectedNutrition.nutriName].veggieValue -
+              a[selectedNutrition.nutriName].veggieValue
         )
-      })
+        .map((veggie, index) => {
+          const mappedVeggie = veggie[selectedNutrition.nutriName]
+
+          return (
+            <FoodTile
+              key={index}
+              veggieName={veggie.veggieName}
+              veggieIcon={veggie.veggieIcon}
+              veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
+              onClick={() => {
+                updateNutriSum(veggie)
+                updatePickedFood(veggie.veggieName)
+              }}
+            />
+          )
+        })
 
     case 'fruits': //rename fruits and veggies in food!
-      return fruits.map((veggie, index) => {
-        const mappedFruit = veggie[selectedNutrition.nutriName]
-
-        return (
-          <FoodTile
-            key={index}
-            veggieName={veggie.veggieName}
-            veggieIcon={veggie.veggieIcon}
-            veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
-            onClick={() => {
-              updateNutriSum(veggie)
-              updatePickedFood(veggie.veggieName)
-            }}
-          />
+      return fruits
+        .sort(
+          (a, b) =>
+            b[selectedNutrition.nutriName].veggieValue -
+              a[selectedNutrition.nutriName].veggieValue
         )
-      })
+        .map((veggie, index) => {
+          const mappedFruit = veggie[selectedNutrition.nutriName]
+
+          return (
+            <FoodTile
+              key={index}
+              veggieName={veggie.veggieName}
+              veggieIcon={veggie.veggieIcon}
+              veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
+              onClick={() => {
+                updateNutriSum(veggie)
+                updatePickedFood(veggie.veggieName)
+              }}
+            />
+          )
+        })
 
     case 'nuts': //rename fruits and veggies in food!
-      return nuts.map((veggie, index) => {
-        const mappedFruit = veggie[selectedNutrition.nutriName]
-
-        return (
-          <FoodTile
-            key={index}
-            veggieName={veggie.veggieName}
-            veggieIcon={veggie.veggieIcon}
-            veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
-            onClick={() => {
-              updateNutriSum(veggie)
-              updatePickedFood(veggie.veggieName)
-            }}
-          />
+      return nuts
+        .sort(
+          (a, b) =>
+            b[selectedNutrition.nutriName].veggieValue -
+              a[selectedNutrition.nutriName].veggieValue
         )
-      })
+        .map((veggie, index) => {
+          const mappedFruit = veggie[selectedNutrition.nutriName]
+
+          return (
+            <FoodTile
+              key={index}
+              veggieName={veggie.veggieName}
+              veggieIcon={veggie.veggieIcon}
+              veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
+              onClick={() => {
+                updateNutriSum(veggie)
+                updatePickedFood(veggie.veggieName)
+              }}
+            />
+          )
+        })
 
     default:
       return console.log('no valid select value')

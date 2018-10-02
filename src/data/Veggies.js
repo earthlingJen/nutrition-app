@@ -4,6 +4,48 @@ import onion from '../pics/onion.svg'
 
 export const veggies = [
   {
+    veggieName: 'Brokkoli',
+    veggieIcon: broccoli,
+    Magnesium: {
+      veggieValue: 24,
+      unit: 'mg',
+    },
+    Kalzium: {
+      veggieValue: 58,
+      unit: 'mg',
+    },
+    Eisen: {
+      veggieValue: 0.8,
+      unit: 'mg',
+    },
+
+    Zink: {
+      veggieValue: 0,
+      unit: '-',
+    },
+    Jod: {
+      veggieValue: 0,
+      unit: '-',
+    },
+    Selen: {
+      veggieValue: 0,
+      unit: '-',
+    },
+    VitA: {
+      veggieValue: 70,
+      unit: 'µg',
+    },
+    VitB2: {
+      veggieValue: 200,
+      unit: 'µg',
+    },
+    Folsäure: {
+      veggieValue: 0,
+      unit: '-',
+    },
+  },
+
+  {
     veggieName: 'Spinat',
     veggieIcon: spinach,
     Magnesium: {
@@ -82,48 +124,6 @@ export const veggies = [
     Folsäure: {
       veggieValue: 110,
       unit: 'µg',
-    },
-  },
-
-  {
-    veggieName: 'Brokkoli',
-    veggieIcon: broccoli,
-    Magnesium: {
-      veggieValue: 24,
-      unit: 'mg',
-    },
-    Kalzium: {
-      veggieValue: 58,
-      unit: 'mg',
-    },
-    Eisen: {
-      veggieValue: 0.8,
-      unit: 'mg',
-    },
-
-    Zink: {
-      veggieValue: 0,
-      unit: '-',
-    },
-    Jod: {
-      veggieValue: 0,
-      unit: '-',
-    },
-    Selen: {
-      veggieValue: 0,
-      unit: '-',
-    },
-    VitA: {
-      veggieValue: 70,
-      unit: 'µg',
-    },
-    VitB2: {
-      veggieValue: 200,
-      unit: 'µg',
-    },
-    Folsäure: {
-      veggieValue: 0,
-      unit: '-',
     },
   },
 ]
