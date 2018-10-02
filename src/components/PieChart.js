@@ -1,6 +1,9 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import propTypes from 'prop-types'
+
+let pieColor = 'red'
 
 const SytledPie = styled.div`
   #root {
@@ -9,7 +12,7 @@ const SytledPie = styled.div`
 
   circle.top {
     fill: transparent;
-    stroke: #50e379;
+    stroke: ${props => props.pieColor};
     stroke-width: 10;
   }
   circle.bottom {
@@ -32,9 +35,7 @@ const StyledDiv = styled.div`
 `
 
 const StyledSpan = styled.span`
-  position: relative;
-  top: 10px;
-  left: 17px;
+  margin-bottom: -17px;
 `
 
 export default class PieChart extends Component {
@@ -42,20 +43,34 @@ export default class PieChart extends Component {
     size: propTypes.number,
     value: propTypes.string,
     number: propTypes.number,
+    unit: propTypes.string,
   }
 
   render() {
     let value = parseFloat(String(this.props.value))
     let val = value > 0.01 ? value : value * 100
+
+    this.props.value >= 90
+      ? (pieColor = '#50e379')
+      : this.props.value >= 50
+        ? (pieColor = 'orange')
+        : (pieColor = 'red')
+
     let strokeDasharray = `${val} 100`
     let containerStyle = {
-      display: 'inline-block',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
       width: 70,
+      textAlign: 'center',
     }
 
     return (
-      <SytledPie style={containerStyle}>
-        <StyledSpan>{this.props.number}</StyledSpan>
+      <SytledPie style={containerStyle} pieColor={pieColor}>
+        <StyledSpan>
+          {this.props.number} {this.props.unit}
+        </StyledSpan>
+
         <StyledDiv>{this.props.value}%</StyledDiv>
         <svg viewBox="0 0 32 32">
           <circle className="bottom" r="16" cx="16" cy="16" />

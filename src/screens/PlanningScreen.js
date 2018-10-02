@@ -164,7 +164,11 @@ export default class PlanningScreen extends Component {
       <React.Fragment>
         <StyledHeader>Plane - {nutriName}</StyledHeader>
         <StyledSubHeader>
-          <PieChart number={nutriValue} value={this.calculatePie()} />
+          <PieChart
+            number={nutriValue}
+            value={this.calculatePie()}
+            unit={nutriUnit}
+          />
           <NutritionTile
             nutriName={nutriName}
             nutriValue={
