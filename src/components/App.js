@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { applyMiddleware, createStore } from 'redux'
 
+import StartScreenContainer from '../containers/StartScreenContainer'
 import NutritionScreenContainer from '../containers/NutritionScreenContainer'
 import PlanningScreenContainer from '../containers/PlanningScreenContainer'
 
@@ -22,6 +23,7 @@ class App extends Component {
       <Router>
         <Provider store={store}>
           <div className="App">
+            <Route exact path="/" component={StartScreenContainer} />
             <Route
               exact
               path="/nutrition"
