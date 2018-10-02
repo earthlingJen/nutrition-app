@@ -76,7 +76,7 @@ describe('App', () => {
       .contains('Spinat')
       .click()
       .get('div')
-      .contains('58.00 / 300')
+      .contains('58.00')
   })
 
   it('adds food to list', () => {
@@ -97,5 +97,16 @@ describe('App', () => {
       .get('li')
       .first()
       .contains('Brokkoli')
+  })
+
+  it('shows right percentage and color', () => {
+    cy.get('div')
+      .contains('Spinat')
+      .click()
+      .get('div')
+      .contains('19%')
+      .get('circle.top ')
+      .should('have.css', 'stroke')
+      .and('equal', 'rgb(255, 0, 0)')
   })
 })
