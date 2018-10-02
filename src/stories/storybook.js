@@ -11,6 +11,7 @@ import { injectGlobal } from 'styled-components'
 import { action } from '@storybook/addon-actions'
 import FoodTypeSelect from '../components/FoodTypeSelect'
 import spinach from '../pics/spinach.svg'
+import PieChart from '../components/PieChart'
 
 injectGlobal`
   * {
@@ -34,7 +35,7 @@ storiesOf('FoodTile', module)
     <FoodTile
       veggieName={text('Veggie', 'Spinat')}
       veggieIcon={spinach}
-      veggieValue={number('VeggieValue: ', 300) + text('unit', ' mg')}
+      veggieValue={number('VeggieValue ', 300) + text('unit', ' mg')}
     />
   ))
 
@@ -50,9 +51,19 @@ storiesOf('NutritionTile', module)
   .addDecorator(withKnobs)
   .add('with text', () => (
     <NutritionTile
-      nutriName={text('NutritionName: ', 'Magnesium')}
-      nutriValue={number('NutritionValue: ', 300)}
-      nutriUnit={text('NutritionUnit: ', 'mg')}
+      nutriName={text('NutritionName', 'Magnesium')}
+      nutriValue={number('NutritionValue', 300)}
+      nutriUnit={text('NutritionUnit', 'mg')}
+    />
+  ))
+
+storiesOf('PieChart', module)
+  .addDecorator(withKnobs)
+  .add('with text', () => (
+    <PieChart
+      number={number('nutriValue', 300)}
+      value={number('Prozent', '50%')}
+      unit={text('nutriUnit', 'mg')}
     />
   ))
 
