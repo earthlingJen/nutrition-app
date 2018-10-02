@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react'
 import logo from '../pics/plannedtritionLogo.svg'
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const StyledDiv = styled.div`
   display: flex;
@@ -24,8 +26,12 @@ export default class StartScreen extends Component {
         <img src={logo} alt="plannedtritionLogo" />
         <p>Möchtest du eine Frage beantworten?</p>
         <div>
-          <StyledButton>Ja</StyledButton>
-          <StyledButton>Nein</StyledButton>
+          <StyledButton onClick={() => console.log('Frage is in Arbeit')}>
+            Ja
+          </StyledButton>
+          <Link to="/nutrition">
+            <StyledButton>Nein</StyledButton>
+          </Link>
         </div>
       </StyledDiv>
     )
