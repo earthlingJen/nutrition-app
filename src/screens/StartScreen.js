@@ -90,12 +90,12 @@ export default class StartScreen extends Component {
 
         <p>Möchtest du eine Frage beantworten?</p>
 
-        <details>
+        <Link to="/nutrition">
+          <StyledButton>Nein</StyledButton>
+        </Link>
+        <details style={{ display: 'none' }}>
           <summary>
             <StyledButton onClick={() => this.showQuestion()}>Ja</StyledButton>
-            <Link to="/nutrition">
-              <StyledButton>Nein</StyledButton>
-            </Link>
           </summary>
 
           <p>Was enthält mehr Eisen?</p>
