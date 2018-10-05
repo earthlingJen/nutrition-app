@@ -14,6 +14,7 @@ const StyledDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100vh;
   background: linear-gradient(white, #50e379, white);
 `
@@ -69,14 +70,13 @@ const StyledRLeaf = styled.img`
   }
 `
 
-let question = 'test'
-
 export default class StartScreen extends Component {
+  state = {
+    questionsHidden: true,
+  }
+
   showQuestion() {
-    console.log(question)
-    return question === ''
-      ? (question = 'Was enthält mehr Eisen?')
-      : (question = '')
+    this.setState({ questionsHidden: false })
   }
 
   render() {
@@ -88,21 +88,19 @@ export default class StartScreen extends Component {
         <StyledD src={d} alt="d" />
         <img src={plainLogo} alt="plainLogo" />
 
-        <p>Möchtest du eine Frage beantworten?</p>
-
-        <Link to="/nutrition">
-          <StyledButton>Nein</StyledButton>
-        </Link>
-        <details style={{ display: 'none' }}>
-          <summary>
-            <StyledButton onClick={() => this.showQuestion()}>Ja</StyledButton>
-          </summary>
-
+        <p>Möchtest du eine Quizfrage beantworten?</p>
+        <div>
+          <StyledButton onClick={() => this.showQuestion()}>Ja</StyledButton>
+          <Link to="/nutrition">
+            <StyledButton>Nein</StyledButton>
+          </Link>
+        </div>
+        <div hidden={this.state.questionsHidden}>
           <p>Was enthält mehr Eisen?</p>
           <StyledAnswer>Spinat</StyledAnswer>
           <StyledAnswer>Brokkoli</StyledAnswer>
           <StyledAnswer>Paprika</StyledAnswer>
-        </details>
+        </div>
       </StyledDiv>
     )
   }

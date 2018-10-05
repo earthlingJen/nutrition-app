@@ -54,7 +54,7 @@ xdescribe('App', () => {
   })
 })
 
-describe('App', () => {
+xdescribe('App', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/planning')
     cy.clearLocalStorage()
@@ -108,5 +108,17 @@ describe('App', () => {
       .get('circle.top ')
       .should('have.css', 'stroke')
       .and('equal', 'rgb(255, 0, 0)')
+  })
+})
+
+describe('App', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
+    cy.clearLocalStorage()
+  })
+  it('leads to nutrition screen', () => {
+    cy.get('button')
+      .contains('Nein')
+      .click()
   })
 })
