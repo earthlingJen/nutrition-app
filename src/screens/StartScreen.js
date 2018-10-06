@@ -9,6 +9,7 @@ import d from '../pics/brownD.svg'
 import leftLeaf from '../pics/leftLeaf.svg'
 import rightLeaf from '../pics/rightLeaf.svg'
 
+let buttonColor = 'white'
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,7 +19,6 @@ const StyledDiv = styled.div`
   height: 100vh;
   background: linear-gradient(white, #50e379, white);
 `
-
 const StyledButton = styled.button`
   background: white;
   border: solid black 1px;
@@ -34,8 +34,11 @@ const StyledAnswer = styled.button`
   margin-top: 10px;
   width: 170px;
   padding: 5px 0 5px;
+  :focus {
+    background: ${props => props.buttonColor};
+    color: white;
+  }
 `
-
 const StyledD = styled.img`
   position: relative;
   top: 37px;
@@ -73,10 +76,21 @@ const StyledRLeaf = styled.img`
 export default class StartScreen extends Component {
   state = {
     questionsHidden: true,
+    answerHidden: true,
   }
 
   showQuestion() {
     this.setState({ questionsHidden: false })
+  }
+
+  showAnswer() {
+    this.setState({ answerHidden: false })
+    buttonColor = 'red'
+  }
+
+  showRightAnswer() {
+    this.setState({ answerHidden: false })
+    buttonColor = 'green'
   }
 
   render() {
@@ -89,18 +103,43 @@ export default class StartScreen extends Component {
         <img src={plainLogo} alt="plainLogo" />
 
         <p>Möchtest du eine Quizfrage beantworten?</p>
+
         <div>
           <StyledButton onClick={() => this.showQuestion()}>Ja</StyledButton>
           <Link to="/nutrition">
             <StyledButton>Nein</StyledButton>
           </Link>
         </div>
+
         <div hidden={this.state.questionsHidden}>
           <p>Was enthält mehr Eisen?</p>
-          <StyledAnswer>Spinat</StyledAnswer>
-          <StyledAnswer>Brokkoli</StyledAnswer>
-          <StyledAnswer>Paprika</StyledAnswer>
+
+          <StyledAnswer
+            buttonColor={buttonColor}
+            onClick={() => this.showAnswer()}
+          >
+            Brokkoli
+          </StyledAnswer>
+
+          <StyledAnswer
+            buttonColor={buttonColor}
+            onClick={() => this.showRightAnswer()}
+          >
+            Spinat
+          </StyledAnswer>
+
+          <StyledAnswer
+            buttonColor={buttonColor}
+            onClick={() => this.showAnswer()}
+          >
+            Paprika
+          </StyledAnswer>
         </div>
+
+        <p hidden={this.state.answerHidden}>
+          <b>Spinat</b> enthält mit 3,4 mg sogar mehr Eisen als Paprika (0,4 mg)
+          und Brokkoli (0,8 mg) zusammen!
+        </p>
       </StyledDiv>
     )
   }
