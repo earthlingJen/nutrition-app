@@ -21,15 +21,15 @@ export const veggies = [
 
     Zink: {
       veggieValue: 0,
-      unit: '-',
+      unit: 'µg*',
     },
     Jod: {
       veggieValue: 0,
-      unit: '-',
+      unit: 'ng*',
     },
     Selen: {
       veggieValue: 0,
-      unit: '-',
+      unit: 'µg*',
     },
     VitA: {
       veggieValue: 70,
@@ -41,7 +41,7 @@ export const veggies = [
     },
     Folsäure: {
       veggieValue: 0,
-      unit: '-',
+      unit: 'µg*',
     },
   },
 
@@ -91,7 +91,7 @@ export const veggies = [
     veggieIcon: onion,
     Magnesium: {
       veggieValue: 0,
-      unit: '-',
+      unit: 'mg*',
     },
     Kalzium: {
       veggieValue: 162,
@@ -103,15 +103,15 @@ export const veggies = [
     },
     Zink: {
       veggieValue: 0,
-      unit: '-',
+      unit: 'µg*',
     },
     Jod: {
       veggieValue: 0,
-      unit: '-',
+      unit: 'ng*',
     },
     Selen: {
       veggieValue: 0,
-      unit: '-',
+      unit: 'µg*',
     },
     VitA: {
       veggieValue: 43,

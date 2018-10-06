@@ -229,7 +229,7 @@ export default class PlanningScreen extends Component {
           </FoodBar>
         </StyledMain>
         <div style={{ paddingTop: '10px' }}>
-          Broccoli icon made by{' '}
+          Icons made by{' '}
           <a href="http://www.freepik.com" title="Freepik">
             Freepik{' '}
           </a>
