@@ -136,10 +136,16 @@ export default class StartScreen extends Component {
           </StyledAnswer>
         </div>
 
-        <p hidden={this.state.answerHidden}>
-          <b>Spinat</b> enthält mit 3,4 mg sogar mehr Eisen als Paprika (0,4 mg)
-          und Brokkoli (0,8 mg) zusammen!
-        </p>
+        <div hidden={this.state.answerHidden}>
+          <p>
+            <b>Spinat</b> enthält mit 3,4 mg sogar
+            <br />
+            mehr Eisen als Paprika (0,4 mg) und Brokkoli (0,8 mg) zusammen!
+          </p>
+          <Link to="/nutrition">
+            <StyledButton style={{ width: '52px' }}>Weiter</StyledButton>
+          </Link>
+        </div>
       </StyledDiv>
     )
   }
