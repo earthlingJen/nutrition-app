@@ -211,21 +211,7 @@ export default class PlanningScreen extends Component {
             </StyledContainer>
           </div>
           <FoodBar>
-            <div>
-              {this.renderFoodTiles()}
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile />
-              <FoodTile veggieName="test" />
-            </div>
+            <div>{this.renderFoodTiles()}</div>
           </FoodBar>
         </StyledMain>
         <div style={{ paddingTop: '10px' }}>
