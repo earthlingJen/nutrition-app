@@ -1,6 +1,9 @@
 import almond from '../pics/almond.svg'
 import cashews from '../pics/bean.svg'
 import brazilnuts from '../pics/paranuss.svg'
+import pistachio from '../pics/pistachio.svg'
+import walnut from '../pics/walnut.svg'
+import peanut from '../pics/peanut.svg'
 
 export const nuts = [
   {
@@ -121,6 +124,126 @@ export const nuts = [
     Folsäure: {
       veggieValue: 39,
       unit: 'µg',
+    },
+  },
+  {
+    veggieName: 'Pistazie',
+    veggieIcon: pistachio,
+    Magnesium: {
+      veggieValue: 160,
+      unit: 'mg',
+    },
+    Kalzium: {
+      veggieValue: 1020,
+      unit: 'mg',
+    },
+    Eisen: {
+      veggieValue: 7.3,
+      unit: 'mg',
+    },
+    Zink: {
+      veggieValue: 1400,
+      unit: 'µg',
+    },
+    Jod: {
+      veggieValue: 0,
+      unit: 'ng*',
+    },
+    Selen: {
+      veggieValue: 6.4,
+      unit: 'µg',
+    },
+    VitA: {
+      veggieValue: 25,
+      unit: 'µg',
+    },
+    VitB2: {
+      veggieValue: 200,
+      unit: 'µg',
+    },
+    Folsäure: {
+      veggieValue: 58,
+      unit: 'µg',
+    },
+  },
+  {
+    veggieName: 'Walnüsse',
+    veggieIcon: walnut,
+    Magnesium: {
+      veggieValue: 135,
+      unit: 'mg',
+    },
+    Kalzium: {
+      veggieValue: 544,
+      unit: 'mg',
+    },
+    Eisen: {
+      veggieValue: 2.5,
+      unit: 'mg',
+    },
+    Zink: {
+      veggieValue: 2700,
+      unit: 'µg',
+    },
+    Jod: {
+      veggieValue: 3000,
+      unit: 'ng',
+    },
+    Selen: {
+      veggieValue: 5.5,
+      unit: 'µg',
+    },
+    VitA: {
+      veggieValue: 8,
+      unit: 'µg',
+    },
+    VitB2: {
+      veggieValue: 120,
+      unit: 'µg',
+    },
+    Folsäure: {
+      veggieValue: 77,
+      unit: 'µg',
+    },
+  },
+  {
+    veggieName: 'Erdnuss',
+    veggieIcon: peanut,
+    Magnesium: {
+      veggieValue: 163,
+      unit: 'mg',
+    },
+    Kalzium: {
+      veggieValue: 661,
+      unit: 'mg',
+    },
+    Eisen: {
+      veggieValue: 1.8,
+      unit: 'mg',
+    },
+    Zink: {
+      veggieValue: 0,
+      unit: 'µg*',
+    },
+    Jod: {
+      veggieValue: 0,
+      unit: 'ng*',
+    },
+    Selen: {
+      veggieValue: 0,
+      unit: 'µg*',
+    },
+    VitA: {
+      veggieValue: 0,
+      unit: 'µg*',
+    },
+    VitB2: {
+      veggieValue: 150,
+      unit: 'µg',
+    },
+    Folsäure: {
+      veggieValue: 0,
+      unit: 'µg*',
     },
   },
 ]
