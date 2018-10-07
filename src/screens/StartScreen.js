@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import plainLogo from '../pics/plainLogo.svg'
@@ -151,7 +150,7 @@ export default class StartScreen extends Component {
             </Link>
           </div>
 
-          <div hidden={this.state.questionsHidden}>
+          <div style={{ width: '330px' }} hidden={this.state.questionsHidden}>
             <p>Was enthält mehr Eisen?</p>
 
             <StyledAnswer
@@ -180,7 +179,8 @@ export default class StartScreen extends Component {
             <p>
               <b>Spinat</b> enthält mit 3,4 mg sogar
               <br />
-              mehr Eisen als Paprika (0,4 mg) und Brokkoli (0,8 mg) zusammen!
+              mehr Eisen als Paprika (0,4 mg) und <br />
+              Brokkoli (0,8 mg) zusammen!
             </p>
             <Link to="/nutrition">
               <StyledButton style={{ width: '52px' }}>Weiter</StyledButton>
