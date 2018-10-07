@@ -1,15 +1,12 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react'
-//import logo from '../pics/plannedtritionLogo.svg'
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import plainLogo from '../pics/plainLogo.svg'
-import d from '../pics/brownD.svg'
 import leftLeaf from '../pics/leftLeaf.svg'
 import rightLeaf from '../pics/rightLeaf.svg'
 
-let buttonColor = 'white'
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,20 +36,43 @@ const StyledAnswer = styled.button`
     color: white;
   }
 `
-const StyledD = styled.img`
+const StyledD = styled.span`
   position: relative;
-  top: 37px;
+  font-family: 'Futura';
+  color: brown;
+  font-size: 42px;
+  top: 48px;
   left: 11px;
+  opacity: 1;
+  animation: brownD 2s;
+  animation-direction: reverse;
+
+  @keyframes brownD {
+    100% {
+      opacity: 0;
+    }
+  }
 `
+
 const StyledLLeaf = styled.img`
   position: relative;
-  top: 63px;
-  right: 2px;
-  animation: moveRLeaf 3s linear 1s infinite alternate;
+  top: 82px;
+  right: 3px;
+  opacity: 1;
+  animation: moveLLeaf 3s linear 1s infinite alternate, growL 4s reverse;
 
-  @keyframes moveRLeaf {
-    100% {
+  @keyframes moveLLeaf {
+    0% {
       transform: rotate(-12deg);
+      transform-origin: bottom right;
+      transition: transform 1s ease-in;
+    }
+  }
+
+  @keyframes growL {
+    100% {
+      opacity: 0;
+      transform: scale(0.1) translate(25%, 20%);
       transform-origin: bottom right;
       transition: transform 1s ease-in;
     }
@@ -60,18 +80,28 @@ const StyledLLeaf = styled.img`
 `
 const StyledRLeaf = styled.img`
   position: relative;
-  top: 40px;
-  left: 36px;
-  animation: moveLeaf 3s linear 1s infinite alternate;
+  top: 60px;
+  left: 35px;
+  opacity: 1;
+  animation: moveRLeaf 3s linear 1s infinite alternate, growR 4s reverse;
 
-  @keyframes moveLeaf {
+  @keyframes moveRLeaf {
     0% {
       transform: rotate(15deg);
       transform-origin: bottom left;
       transition: transform 1s ease-in;
     }
   }
+  @keyframes growR {
+    100% {
+      opacity: 0;
+      transform: scale(0.1) translate(-25%, 50%);
+      transform-origin: bottom left;
+      transition: transform 1s ease-in;
+    }
+  }
 `
+let buttonColor = 'white'
 
 export default class StartScreen extends Component {
   state = {
@@ -96,10 +126,10 @@ export default class StartScreen extends Component {
   render() {
     return (
       <StyledDiv>
-        {/* <img src={logo} alt="plannedtritionLogo" /> */}
         <StyledLLeaf src={leftLeaf} alt="leftLeaf" />
         <StyledRLeaf src={rightLeaf} alt="rightLeaf" />
-        <StyledD src={d} alt="d" />
+        <StyledD>d</StyledD>
+
         <img src={plainLogo} alt="plainLogo" />
 
         <p>Möchtest du eine Quizfrage beantworten?</p>
