@@ -5,12 +5,12 @@ import leftLeaf from '../pics/leftLeaf.svg'
 import rightLeaf from '../pics/rightLeaf.svg'
 
 const StyledD = styled.span`
-  position: relative;
+  position: absolute;
   font-family: 'Futura';
   color: brown;
   font-size: 42px;
-  top: 48px;
-  left: 11px;
+  bottom: 3px;
+  left: 129px;
   opacity: 1;
   animation: brownD 2s;
   animation-direction: reverse;
@@ -23,9 +23,9 @@ const StyledD = styled.span`
 `
 
 const StyledLLeaf = styled.img`
-  position: relative;
-  top: 82px;
-  right: 3px;
+  position: absolute;
+  bottom: 46px;
+  right: 108px;
   opacity: 1;
   animation: moveLLeaf 3s linear 1s infinite alternate, growL 4s reverse;
 
@@ -47,9 +47,9 @@ const StyledLLeaf = styled.img`
   }
 `
 const StyledRLeaf = styled.img`
-  position: relative;
-  top: 60px;
-  left: 35px;
+  position: absolute;
+  bottom: 47px;
+  left: 146px;
   opacity: 1;
   animation: moveRLeaf 3s linear 1s infinite alternate, growR 4s reverse;
 
@@ -70,16 +70,20 @@ const StyledRLeaf = styled.img`
   }
 `
 
+const StyledContainer = styled.div`
+  position: relative;
+`
+
 export default class AnimatedLogo extends Component {
   render() {
     return (
-      <React.Fragment>
+      <StyledContainer>
         <StyledLLeaf src={leftLeaf} alt="leftLeaf" />
         <StyledRLeaf src={rightLeaf} alt="rightLeaf" />
         <StyledD>d</StyledD>
 
         <img src={plainLogo} alt="plainLogo" />
-      </React.Fragment>
+      </StyledContainer>
     )
   }
 }

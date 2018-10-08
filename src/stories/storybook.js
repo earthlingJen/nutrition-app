@@ -72,4 +72,8 @@ storiesOf('SexSelect', module).add('with text', () => (
   <SexSelect setSelectSex={action('setSelectSex(event.target.value)')} />
 ))
 
-storiesOf('Logo', module).add('with animation', () => <AnimatedLogo />)
+storiesOf('Logo', module).add('with animation', () => (
+  <div style={{ position: 'absolute', marginTop: '50px' }}>
+    <AnimatedLogo />
+  </div>
+))
