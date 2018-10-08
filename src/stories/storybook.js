@@ -12,6 +12,7 @@ import { action } from '@storybook/addon-actions'
 import FoodTypeSelect from '../components/FoodTypeSelect'
 import spinach from '../pics/spinach.svg'
 import PieChart from '../components/PieChart'
+import AnimatedLogo from '../components/AnimatedLogo'
 
 injectGlobal`
   * {
@@ -70,3 +71,5 @@ storiesOf('PieChart', module)
 storiesOf('SexSelect', module).add('with text', () => (
   <SexSelect setSelectSex={action('setSelectSex(event.target.value)')} />
 ))
+
+storiesOf('Logo', module).add('with animation', () => <AnimatedLogo />)
