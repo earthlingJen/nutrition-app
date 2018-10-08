@@ -15,7 +15,6 @@ const StyledBody = styled.div`
   display: grid;
   grid-template-rows: 1fr 2fr 1fr 6fr 1fr;
   flex-direction: column;
-  margin: 0;
 `
 const StyledSubHeader = styled.div`
   display: flex;

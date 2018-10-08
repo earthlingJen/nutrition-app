@@ -10,7 +10,6 @@ import Footer from '../components/Footer'
 
 const StyledBody = styled.div`
   display: grid;
-  margin: 0;
   grid-template-rows: 1fr 1fr 1fr 6fr 1fr;
   height: 100vh;
   overflow: hidden;

@@ -6,6 +6,7 @@ import { applyMiddleware, createStore } from 'redux'
 import StartScreen from '../screens/StartScreen'
 import NutritionScreenContainer from '../containers/NutritionScreenContainer'
 import PlanningScreenContainer from '../containers/PlanningScreenContainer'
+import ShoppingScreenContainer from '../containers/ShoppingScreenContainer'
 import ImprintScreen from '../screens/ImprintScreen'
 
 import { saveToLocalStorage } from '../middlewares'
@@ -31,6 +32,7 @@ class App extends Component {
               component={NutritionScreenContainer}
             />
             <Route exact path="/planning" component={PlanningScreenContainer} />
+            <Route exact path="/shopping" component={ShoppingScreenContainer} />
             <Route exact path="/imprint" component={ImprintScreen} />
           </div>
         </Provider>
