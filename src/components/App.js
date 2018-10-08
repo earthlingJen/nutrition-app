@@ -3,10 +3,10 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { applyMiddleware, createStore } from 'redux'
 
-import StartScreenContainer from '../containers/StartScreenContainer'
+import StartScreen from '../screens/StartScreen'
 import NutritionScreenContainer from '../containers/NutritionScreenContainer'
 import PlanningScreenContainer from '../containers/PlanningScreenContainer'
-import ImprintScreenContainer from '../containers/ImprintScreenContainer'
+import ImprintScreen from '../screens/ImprintScreen'
 
 import { saveToLocalStorage } from '../middlewares'
 import reducer from '../reducer'
@@ -24,14 +24,14 @@ class App extends Component {
       <Router>
         <Provider store={store}>
           <div className="App">
-            <Route exact path="/" component={StartScreenContainer} />
+            <Route exact path="/" component={StartScreen} />
             <Route
               exact
               path="/nutrition"
               component={NutritionScreenContainer}
             />
             <Route exact path="/planning" component={PlanningScreenContainer} />
-            <Route exact path="/imprint" component={ImprintScreenContainer} />
+            <Route exact path="/imprint" component={ImprintScreen} />
           </div>
         </Provider>
       </Router>
