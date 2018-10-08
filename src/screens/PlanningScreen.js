@@ -15,14 +15,14 @@ const StyledBody = styled.div`
   display: grid;
   grid-template-rows: 1fr 2fr 1fr 6fr 1fr;
   flex-direction: column;
-  justify-content: space-between;
   margin: 0;
 `
 const StyledSubHeader = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin: 20px;
+  justify-content: space-between;
+  max-width: 355px;
 `
 const StyledP = styled.p`
   text-align: right;
@@ -49,7 +49,7 @@ const StyledContainer = styled.div`
 const StyledList = styled.ul`
   overflow-y: scroll;
   height: 30vh;
-  width: 55vw;
+  width: 182px;
   box-shadow: 0 2px 10px grey;
 `
 const FoodBar = styled.div`
@@ -202,13 +202,12 @@ export default class PlanningScreen extends Component {
 
           <FoodTypeSelect setSelectFood={setSelectFood} />
         </StyledSubHeader>
-
         <StyledP>pro 100g</StyledP>
 
         <StyledMain>
           <div>
             <StyledPlate>
-              <img src={plate} alt="plate" style={{ width: '80%' }} />
+              <img src={plate} alt="plate" />
             </StyledPlate>
             <StyledContainer>
               <StyledList>{this.renderList()}</StyledList>

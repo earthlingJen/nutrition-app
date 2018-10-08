@@ -16,7 +16,7 @@ const StyledBody = styled.div`
   overflow: hidden;
 `
 const StyledDiv = styled.div`
-  margin-top: 25px;
+  margin-top: 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,6 @@ const NutritonGrid = styled.div`
   overflow-y: scroll;
   width: 310px;
   margin: auto;
-  z-index: -1;
 `
 
 export default class NutritionScreen extends Component {
