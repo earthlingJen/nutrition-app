@@ -5,15 +5,7 @@ import AgeSelect from '../components/AgeSelect'
 import SexSelect from '../components/SexSelect'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-
-const StyledHeader = styled.h1`
-  background: #50e379;
-  color: white;
-  padding: 20px 10px 10px;
-  margin: -10px;
-  display: flex;
-  justify-content: center;
-`
+import { StyledHeader } from '../components/Header'
 
 const StyledDiv = styled.div`
   margin-top: 40px;
