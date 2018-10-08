@@ -56,7 +56,7 @@ const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  height: 350px;
+  height: 400px;
 `
 export default class PlanningScreen extends Component {
   static propTypes = {
