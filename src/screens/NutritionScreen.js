@@ -6,9 +6,17 @@ import SexSelect from '../components/SexSelect'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { StyledHeader } from '../components/Header'
+import Footer from '../components/Footer'
 
+const StyledBody = styled.div`
+  display: grid;
+  margin: 0;
+  grid-template-rows: 1fr 1fr 1fr 6fr 1fr;
+  height: 100vh;
+  overflow: hidden;
+`
 const StyledDiv = styled.div`
-  margin-top: 40px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,16 +26,21 @@ const StyledDiv = styled.div`
 `
 
 const StyledSpan = styled.span`
-  margin-top: 40px;
+  margin: 30px 0 10px;
   display: flex;
   justify-content: center;
 `
 
 const NutritonGrid = styled.div`
-  margin-top: 40px;
   display: grid;
+  grid-gap: 2px;
+  justify-items: center;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
+  overflow-y: scroll;
+  width: 310px;
+  margin: auto;
+  z-index: -1;
 `
 
 export default class NutritionScreen extends Component {
@@ -37,21 +50,6 @@ export default class NutritionScreen extends Component {
     user: PropTypes.object,
     nutriNeeds: PropTypes.arrayOf(PropTypes.object),
     saveValue: PropTypes.func,
-  }
-
-  render() {
-    const { setSelectAge, setSelectSex } = this.props
-    return (
-      <React.Fragment>
-        <StyledHeader>Bedarf</StyledHeader>
-        <StyledDiv>
-          <SexSelect setSelectSex={setSelectSex} />
-          <AgeSelect setSelectAge={setSelectAge} />
-        </StyledDiv>
-        <StyledSpan>Empfohlene Tagesdosis:</StyledSpan>
-        <NutritonGrid>{this.renderNutriTiles()}</NutritonGrid>
-      </React.Fragment>
-    )
   }
 
   renderNutriTiles() {
@@ -80,5 +78,20 @@ export default class NutritionScreen extends Component {
         </Link>
       )
     })
+  }
+  render() {
+    const { setSelectAge, setSelectSex } = this.props
+    return (
+      <StyledBody>
+        <StyledHeader>Bedarf</StyledHeader>
+        <StyledDiv>
+          <SexSelect setSelectSex={setSelectSex} />
+          <AgeSelect setSelectAge={setSelectAge} />
+        </StyledDiv>
+        <StyledSpan>Empfohlene Tagesdosis:</StyledSpan>
+        <NutritonGrid>{this.renderNutriTiles()}</NutritonGrid>
+        <Footer />
+      </StyledBody>
+    )
   }
 }

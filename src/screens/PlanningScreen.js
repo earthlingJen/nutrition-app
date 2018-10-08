@@ -8,14 +8,22 @@ import plate from '../pics/plate.svg'
 import FoodTypeSelect from '../components/FoodTypeSelect'
 import PieChart from '../components/PieChart'
 import { StyledHeader } from '../components/Header'
+import Footer from '../components/Footer'
 
+const StyledBody = styled.div`
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr 6fr 1fr;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+`
 const StyledSubHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 20px 0;
+  margin: 20px;
 `
-
 const StyledP = styled.p`
   text-align: right;
   margin: 0 20px;
@@ -25,14 +33,14 @@ const StyledP = styled.p`
 const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  height: 70vh;
   justify-content: center;
+  margin-top: -40px;
 `
 const StyledPlate = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 72px;
+  padding-top: 42px;
 `
 const StyledContainer = styled.div`
   display: flex;
@@ -40,7 +48,7 @@ const StyledContainer = styled.div`
 `
 const StyledList = styled.ul`
   overflow-y: scroll;
-  height: 42vh;
+  height: 30vh;
   width: 55vw;
   box-shadow: 0 2px 10px grey;
 `
@@ -48,6 +56,7 @@ const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  height: 350px;
 `
 export default class PlanningScreen extends Component {
   static propTypes = {
@@ -171,8 +180,9 @@ export default class PlanningScreen extends Component {
     const { nutriSum, setSelectFood } = this.props
 
     return (
-      <React.Fragment>
+      <StyledBody>
         <StyledHeader>Plane - {nutriName}</StyledHeader>
+
         <StyledSubHeader>
           <PieChart
             number={nutriValue}
@@ -192,7 +202,9 @@ export default class PlanningScreen extends Component {
 
           <FoodTypeSelect setSelectFood={setSelectFood} />
         </StyledSubHeader>
+
         <StyledP>pro 100g</StyledP>
+
         <StyledMain>
           <div>
             <StyledPlate>
@@ -206,7 +218,9 @@ export default class PlanningScreen extends Component {
             <div>{this.renderFoodTiles()}</div>
           </FoodBar>
         </StyledMain>
-      </React.Fragment>
+
+        <Footer />
+      </StyledBody>
     )
   }
 }

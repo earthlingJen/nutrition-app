@@ -5,13 +5,14 @@ import Footer from '../components/Footer'
 
 const Container = styled.main`
   background: #9e9e9e24;
-  margin: 17px;
   border-radius: 5px;
   padding: 10px;
+  margin: 10px;
 `
 const StyledBody = styled.div`
   height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   flex-direction: column;
   justify-content: space-between;
 `
