@@ -111,7 +111,7 @@ xdescribe('App', () => {
   })
 })
 
-describe('App', () => {
+xdescribe('App', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
     cy.clearLocalStorage()
@@ -142,5 +142,23 @@ describe('App', () => {
       .contains('Weiter')
       .click()
       .request('http://localhost:3000/planning')
+  })
+})
+
+describe('App', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/imprint')
+    cy.clearLocalStorage()
+  })
+  it('leads to linked screens', () => {
+    cy.get('[href="/nutrition"] > img')
+      .click()
+      .request('/nutrition')
+      .get('[href="/planning"] > img')
+      .click()
+      .request('/planning')
+      .get('[href="/imprint"] > img')
+      .click()
+      .request('/imprint')
   })
 })

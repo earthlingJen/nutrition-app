@@ -13,6 +13,7 @@ import FoodTypeSelect from '../components/FoodTypeSelect'
 import spinach from '../pics/spinach.svg'
 import PieChart from '../components/PieChart'
 import AnimatedLogo from '../components/AnimatedLogo'
+import Footer from '../components/Footer'
 
 injectGlobal`
   * {
@@ -77,3 +78,5 @@ storiesOf('Logo', module).add('with animation', () => (
     <AnimatedLogo />
   </div>
 ))
+
+storiesOf('Footer', module).add('with icons', () => <Footer />)
