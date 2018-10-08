@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyledHeader } from '../components/Header'
 import styled from 'styled-components'
+import Footer from '../components/Footer'
 
 const Container = styled.main`
   background: #9e9e9e24;
@@ -8,11 +9,17 @@ const Container = styled.main`
   border-radius: 5px;
   padding: 10px;
 `
+const StyledBody = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
 
 export default class ImprintScreen extends Component {
   render() {
     return (
-      <div>
+      <StyledBody>
         <StyledHeader>Impressum</StyledHeader>
         <Container>
           <h4>Anmerkungen:</h4>
@@ -42,7 +49,8 @@ export default class ImprintScreen extends Component {
             </a>
           </p>
         </Container>
-      </div>
+        <Footer />
+      </StyledBody>
     )
   }
 }
