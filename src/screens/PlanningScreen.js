@@ -9,6 +9,7 @@ import FoodTypeSelect from '../components/FoodTypeSelect'
 import PieChart from '../components/PieChart'
 import { StyledHeader } from '../components/Header'
 import Footer from '../components/Footer'
+import spinach from '../pics/spinach.svg'
 
 const StyledBody = styled.div`
   height: 100vh;
@@ -39,7 +40,12 @@ const StyledPlate = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 42px;
+  margin-top: -20px;
+`
+const StyledImg = styled.img`
+  position: relative;
+  top: 50px;
+  width: 60px;
 `
 const StyledContainer = styled.div`
   display: flex;
@@ -74,7 +80,7 @@ export default class PlanningScreen extends Component {
   renderList() {
     const { pickedFood } = this.props
     return pickedFood.map((food, index) => {
-      return <li key={index}>100g {food}</li>
+      return <li key={index}>100g {food.name}</li>
     })
   }
 
@@ -86,9 +92,10 @@ export default class PlanningScreen extends Component {
       selectedNutrition,
       updateNutriSum,
       updatePickedFood,
+      pickedFoodType,
     } = this.props
 
-    switch (this.props.pickedFoodType) {
+    switch (pickedFoodType) {
     case 'veggies':
       return veggies
         .sort(
@@ -98,7 +105,10 @@ export default class PlanningScreen extends Component {
         )
         .map((veggie, index) => {
           const mappedVeggie = veggie[selectedNutrition.nutriName]
-
+          const foodForList = {
+            name: veggie.veggieName,
+            icon: veggie.veggieIcon,
+          }
           return (
             <FoodTile
               key={index}
@@ -107,7 +117,7 @@ export default class PlanningScreen extends Component {
               veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
               onClick={() => {
                 updateNutriSum(veggie)
-                updatePickedFood(veggie.veggieName)
+                updatePickedFood(foodForList)
               }}
             />
           )
@@ -123,6 +133,10 @@ export default class PlanningScreen extends Component {
         .map((veggie, index) => {
           const mappedFruit = veggie[selectedNutrition.nutriName]
 
+          const foodForList = {
+            name: veggie.veggieName,
+            icon: veggie.veggieIcon,
+          }
           return (
             <FoodTile
               key={index}
@@ -131,7 +145,7 @@ export default class PlanningScreen extends Component {
               veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
               onClick={() => {
                 updateNutriSum(veggie)
-                updatePickedFood(veggie.veggieName)
+                updatePickedFood(foodForList)
               }}
             />
           )
@@ -146,7 +160,10 @@ export default class PlanningScreen extends Component {
         )
         .map((veggie, index) => {
           const mappedFruit = veggie[selectedNutrition.nutriName]
-
+          const foodForList = {
+            name: veggie.veggieName,
+            icon: veggie.veggieIcon,
+          }
           return (
             <FoodTile
               key={index}
@@ -155,7 +172,7 @@ export default class PlanningScreen extends Component {
               veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
               onClick={() => {
                 updateNutriSum(veggie)
-                updatePickedFood(veggie.veggieName)
+                updatePickedFood(foodForList)
               }}
             />
           )
@@ -190,12 +207,7 @@ export default class PlanningScreen extends Component {
           />
           <NutritionTile
             nutriName={nutriName}
-            nutriValue={
-              Number.parseFloat(nutriSum[nutriName]).toFixed(2)
-              // +
-              // ' / ' +
-              // nutriValue
-            }
+            nutriValue={Number.parseFloat(nutriSum[nutriName]).toFixed(2)}
             nutriUnit={nutriUnit}
           />
 
@@ -206,6 +218,7 @@ export default class PlanningScreen extends Component {
         <StyledMain>
           <div>
             <StyledPlate>
+              <StyledImg src={spinach} alt="food on plate" />
               <img src={plate} alt="plate" />
             </StyledPlate>
             <StyledContainer>
