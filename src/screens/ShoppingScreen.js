@@ -4,7 +4,6 @@ import { StyledHeader } from '../components/Header'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 import PropTypes from 'prop-types'
-//import spinach from '../pics/spinach.svg'
 import ShoppingTile from '../components/ShoppingTile'
 import basket from '../pics/coloredBasket.svg'
 

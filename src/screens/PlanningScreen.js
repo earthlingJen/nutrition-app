@@ -45,7 +45,7 @@ const StyledPlate = styled.div`
 const StyledImg = styled.img`
   position: relative;
   top: 50px;
-  width: 60px;
+  height: 60px;
 `
 const StyledContainer = styled.div`
   display: flex;
