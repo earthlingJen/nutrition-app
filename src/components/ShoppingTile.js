@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const size = 70
 
 const StyledTile = styled.div`
-  margin: 5px auto;
+  margin: 10px auto; /*5px for Mobile S*/
   background: lightgrey;
   border: solid grey 1px;
   border-radius: 5px;
