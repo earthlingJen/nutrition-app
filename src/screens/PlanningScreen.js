@@ -9,7 +9,7 @@ import FoodTypeSelect from '../components/FoodTypeSelect'
 import PieChart from '../components/PieChart'
 import { StyledHeader } from '../components/Header'
 import Footer from '../components/Footer'
-import spinach from '../pics/spinach.svg'
+//import spinach from '../pics/spinach.svg'
 
 const StyledBody = styled.div`
   height: 100vh;
@@ -76,6 +76,8 @@ export default class PlanningScreen extends Component {
     setSelectFood: PropTypes.func.isRequired,
     pickedFoodType: PropTypes.string,
     amount: PropTypes.number,
+    foodOnPlate: PropTypes.any,
+    renderFoodOnPlate: PropTypes.func,
   }
 
   renderList() {
@@ -99,6 +101,7 @@ export default class PlanningScreen extends Component {
       updatePickedFood,
       pickedFoodType,
       amount,
+      renderFoodOnPlate,
     } = this.props
 
     switch (pickedFoodType) {
@@ -126,6 +129,7 @@ export default class PlanningScreen extends Component {
               onClick={() => {
                 updateNutriSum(veggie)
                 updatePickedFood(foodForList)
+                renderFoodOnPlate(veggie.veggieIcon)
               }}
             />
           )
@@ -144,6 +148,7 @@ export default class PlanningScreen extends Component {
           const foodForList = {
             name: veggie.veggieName,
             icon: veggie.veggieIcon,
+            amount: amount,
           }
           return (
             <FoodTile
@@ -154,6 +159,7 @@ export default class PlanningScreen extends Component {
               onClick={() => {
                 updateNutriSum(veggie)
                 updatePickedFood(foodForList)
+                renderFoodOnPlate(veggie.veggieIcon)
               }}
             />
           )
@@ -171,6 +177,7 @@ export default class PlanningScreen extends Component {
           const foodForList = {
             name: veggie.veggieName,
             icon: veggie.veggieIcon,
+            amount: amount,
           }
           return (
             <FoodTile
@@ -181,6 +188,7 @@ export default class PlanningScreen extends Component {
               onClick={() => {
                 updateNutriSum(veggie)
                 updatePickedFood(foodForList)
+                renderFoodOnPlate(veggie.veggieIcon)
               }}
             />
           )
@@ -201,7 +209,7 @@ export default class PlanningScreen extends Component {
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
-    const { nutriSum, setSelectFood } = this.props
+    const { nutriSum, setSelectFood, foodOnPlate } = this.props
 
     return (
       <StyledBody>
@@ -226,7 +234,8 @@ export default class PlanningScreen extends Component {
         <StyledMain>
           <div>
             <StyledPlate>
-              <StyledImg src={spinach} alt="foodOnPlate" />
+              {foodOnPlate && <StyledImg src={foodOnPlate} alt="foodOnPlate" />}
+
               <img src={plate} alt="plate" />
             </StyledPlate>
             <StyledContainer>

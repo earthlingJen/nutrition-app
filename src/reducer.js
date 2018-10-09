@@ -33,7 +33,7 @@ const initialState = /*load('app') ||*/ {
   },
   pickedFood: [],
   pickedFoodType: 'veggies',
-  foodOnPlate: '',
+  foodOnPlate: null,
   amount: 100,
 }
 
@@ -91,6 +91,12 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       pickedFoodType: action.payload,
+    }
+
+  case ACTIONS.FOOD_ON_PLATE:
+    return {
+      ...state,
+      foodOnPlate: action.payload,
     }
 
   default:
