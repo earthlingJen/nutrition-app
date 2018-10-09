@@ -10,6 +10,8 @@ const mapStateToProps = state => ({
   nutriSum: state.nutriSum,
   pickedFood: state.pickedFood,
   pickedFoodType: state.pickedFoodType,
+  foodOnPlate: state.foodOnPlate,
+  amount: state.amount,
 })
 
 const mapDispatchToProps = dispatch => ({

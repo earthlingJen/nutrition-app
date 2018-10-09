@@ -28,15 +28,15 @@ export default class ShoppingTile extends Component {
     onClick: PropTypes.func,
     veggieName: PropTypes.string,
     veggieIcon: PropTypes.string,
-    veggieAmount: PropTypes.string,
+    amount: PropTypes.number,
   }
   render() {
-    const { veggieName, veggieAmount, veggieIcon, onClick } = this.props
+    const { veggieName, veggieIcon, amount, onClick } = this.props
     return (
       <StyledTile onClick={onClick}>
         <div>{veggieName}</div>
         <img src={veggieIcon} alt={veggieName} style={{ width: '20px' }} />
-        <div>{veggieAmount}</div>
+        <div>{amount} g</div>
       </StyledTile>
     )
   }

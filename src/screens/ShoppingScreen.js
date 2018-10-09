@@ -23,6 +23,7 @@ const StyledList = styled.div`
 export default class ShoppingScreen extends Component {
   static propTypes = {
     pickedFood: PropTypes.array,
+    amount: PropTypes.number,
   }
 
   render() {
@@ -37,7 +38,7 @@ export default class ShoppingScreen extends Component {
                 key={index}
                 veggieName={veggie.name}
                 veggieIcon={veggie.icon}
-                veggieAmount="100 g"
+                amount={this.props.amount}
               />
             )
           })}

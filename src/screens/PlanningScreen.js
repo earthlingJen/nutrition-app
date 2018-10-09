@@ -75,12 +75,17 @@ export default class PlanningScreen extends Component {
     updatePickedFood: PropTypes.func.isRequired,
     setSelectFood: PropTypes.func.isRequired,
     pickedFoodType: PropTypes.string,
+    amount: PropTypes.number,
   }
 
   renderList() {
-    const { pickedFood } = this.props
+    const { pickedFood, amount } = this.props
     return pickedFood.map((food, index) => {
-      return <li key={index}>100g {food.name}</li>
+      return (
+        <li key={index}>
+          {amount}g {food.name}
+        </li>
+      )
     })
   }
 
@@ -93,6 +98,7 @@ export default class PlanningScreen extends Component {
       updateNutriSum,
       updatePickedFood,
       pickedFoodType,
+      amount,
     } = this.props
 
     switch (pickedFoodType) {
@@ -108,7 +114,9 @@ export default class PlanningScreen extends Component {
           const foodForList = {
             name: veggie.veggieName,
             icon: veggie.veggieIcon,
+            amount: amount,
           }
+
           return (
             <FoodTile
               key={index}
@@ -218,7 +226,7 @@ export default class PlanningScreen extends Component {
         <StyledMain>
           <div>
             <StyledPlate>
-              <StyledImg src={spinach} alt="food on plate" />
+              <StyledImg src={spinach} alt="foodOnPlate" />
               <img src={plate} alt="plate" />
             </StyledPlate>
             <StyledContainer>
