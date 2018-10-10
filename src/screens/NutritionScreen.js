@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import NutritionTile from '../components/NutritionTile'
@@ -48,6 +49,7 @@ export default class NutritionScreen extends Component {
     user: PropTypes.object,
     nutriNeeds: PropTypes.arrayOf(PropTypes.object),
     saveValue: PropTypes.func,
+    nutriSum: PropTypes.object,
   }
 
   renderNutriTiles() {
@@ -60,6 +62,23 @@ export default class NutritionScreen extends Component {
         nutriValue: nutrition[sex][age],
         nutriUnit: nutrition.unit,
       }
+
+      console.log(
+        selectedNutrition.nutriName,
+        selectedNutrition.nutriValue <=
+          this.props.nutriSum[selectedNutrition.nutriName]
+      )
+
+      // const colorTile = () => {
+      //   let tileColor
+      //   selectedNutrition.nutriName,
+      //   selectedNutrition.nutriValue <=
+      //     this.props.nutriSum[selectedNutrition.nutriName]
+      //     ? tileColor === 'green'
+      //     : tileColor === 'white'
+      // }
+      // colorTile()
+
       return (
         <Link
           to="/planning"
@@ -72,11 +91,13 @@ export default class NutritionScreen extends Component {
             nutriName={nutrition.nutriName}
             nutriValue={nutrition[sex][age]}
             nutriUnit={nutrition.unit}
+            style={{ background: 'tileColor' }}
           />
         </Link>
       )
     })
   }
+
   render() {
     const { setSelectAge, setSelectSex } = this.props
     return (
