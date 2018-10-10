@@ -10,10 +10,11 @@ import SexSelect from '../components/SexSelect'
 import { injectGlobal } from 'styled-components'
 import { action } from '@storybook/addon-actions'
 import FoodTypeSelect from '../components/FoodTypeSelect'
-import spinach from '../pics/spinach.svg'
+import spinach from '../pics/veggieIcons/spinach.svg'
 import PieChart from '../components/PieChart'
 import AnimatedLogo from '../components/AnimatedLogo'
 import Footer from '../components/Footer'
+import ShoppingTile from '../components/ShoppingTile'
 
 injectGlobal`
   * {
@@ -49,6 +50,8 @@ storiesOf('FoodTypeSelect', module)
     />
   ))
 
+storiesOf('Footer', module).add('with icons', () => <Footer />)
+
 storiesOf('NutritionTile', module)
   .addDecorator(withKnobs)
   .add('with text', () => (
@@ -73,10 +76,18 @@ storiesOf('SexSelect', module).add('with text', () => (
   <SexSelect setSelectSex={action('setSelectSex(event.target.value)')} />
 ))
 
+storiesOf('ShoppingTile', module)
+  .addDecorator(withKnobs)
+  .add('with content', () => (
+    <ShoppingTile
+      veggieName={text('veggieName', 'Spinach')}
+      veggieIcon={spinach}
+      amount={number('amount', 100)}
+    />
+  ))
+
 storiesOf('Logo', module).add('with animation', () => (
   <div style={{ position: 'absolute', marginTop: '50px' }}>
     <AnimatedLogo />
   </div>
 ))
-
-storiesOf('Footer', module).add('with icons', () => <Footer />)
