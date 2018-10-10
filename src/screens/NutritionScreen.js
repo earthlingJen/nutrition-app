@@ -65,25 +65,24 @@ export default class NutritionScreen extends Component {
         nutriUnit: nutrition.unit,
       }
 
-      selectedNutrition.nutriValue <=
-      this.props.nutriSum[selectedNutrition.nutriName]
-        ? (tileColor = '#50e3793b')
-        : (tileColor = 'white')
+      const tile = selectedNutrition.nutriName
+      const tooMuch =
+        selectedNutrition.nutriValue <=
+        this.props.nutriSum[selectedNutrition.nutriName]
 
-      // selectedNutrition.nutriName === 'Selen' &&
-      // selectedNutrition.nutriValue <=
-      //   this.props.nutriSum[selectedNutrition.nutriName]
-      //   ? (tileColor = '#ff000059')
-      //   : (tileColor = 'white')
+      const rot = '#ff000059'
+      const grün = '#50e3793b'
 
-      // switch (selectedNutrition.nutriName) {
-      // case ('Selen' || 'Jod') &&
-      //     selectedNutrition.nutriValue <= this.props.nutriSum:
-      //   return (tileColor = '#ff000059')
-
-      // default:
-      //   tileColor = '#50e3793b'
-      // }
+      switch (tile) {
+      case 'Selen':
+        tooMuch ? (tileColor = rot) : (tileColor = 'white')
+        break
+      case 'Jod':
+        tooMuch ? (tileColor = rot) : (tileColor = 'white')
+        break
+      default:
+        tooMuch ? (tileColor = grün) : (tileColor = 'white')
+      }
 
       return (
         <Link
