@@ -1,10 +1,10 @@
-import apricot from '../pics/apricot.svg'
-import pineapple from '../pics/pineapple.svg'
-import banana from '../pics/banana.svg'
-import orange from '../pics/orange.svg'
-import pear from '../pics/pear.svg'
-import peach from '../pics/peach.svg'
-import strawberry from '../pics/strawberry.svg'
+import apricot from '../pics/fruitsIcons/apricot.svg'
+import banana from '../pics/fruitsIcons/banana.svg'
+import orange from '../pics/fruitsIcons/orange.svg'
+import peach from '../pics/fruitsIcons/peach.svg'
+import pear from '../pics/fruitsIcons/pear.svg'
+import pineapple from '../pics/fruitsIcons/pineapple.svg'
+import strawberry from '../pics/fruitsIcons/strawberry.svg'
 
 export const fruits = [
   {

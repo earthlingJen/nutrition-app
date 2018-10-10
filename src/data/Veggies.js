@@ -1,10 +1,10 @@
-import broccoli from '../pics/broccoli.svg'
-import spinach from '../pics/spinach.svg'
-import onion from '../pics/onion.svg'
-import tomato from '../pics/tomato.svg'
-import pepper from '../pics/bell-pepper.svg'
-import cucumber from '../pics/cucumber.svg'
-import pumpkin from '../pics/pumpkin.svg'
+import pepper from '../pics/veggieIcons/bell-pepper.svg'
+import broccoli from '../pics/veggieIcons/broccoli.svg'
+import cucumber from '../pics/veggieIcons/cucumber.svg'
+import onion from '../pics/veggieIcons/onion.svg'
+import pumpkin from '../pics/veggieIcons/pumpkin.svg'
+import spinach from '../pics/veggieIcons/spinach.svg'
+import tomato from '../pics/veggieIcons/tomato.svg'
 
 export const veggies = [
   {

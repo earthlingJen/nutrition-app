@@ -1,9 +1,9 @@
-import almond from '../pics/almond.svg'
-import cashews from '../pics/bean.svg'
-import brazilnuts from '../pics/paranuss.svg'
-import pistachio from '../pics/pistachio.svg'
-import walnut from '../pics/walnut.svg'
-import peanut from '../pics/peanut.svg'
+import almond from '../pics/nutsIcons/almond.svg'
+import cashews from '../pics/nutsIcons/bean.svg'
+import brazilnuts from '../pics/nutsIcons/paranuss.svg'
+import peanut from '../pics/nutsIcons/peanut.svg'
+import pistachio from '../pics/nutsIcons/pistachio.svg'
+import walnut from '../pics/nutsIcons/walnut.svg'
 
 export const nuts = [
   {

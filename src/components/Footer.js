@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import nutriIcon from '../pics/nutriIcon.svg'
-import imprintIcon from '../pics/imprintIcon.svg'
-import basketIcon from '../pics/basketIcon.svg'
-import plateIcon from '../pics/plateIcon.svg'
+import nutriIcon from '../pics/footerIcons/nutriIcon.svg'
+import imprintIcon from '../pics/footerIcons/imprintIcon.svg'
+import basketIcon from '../pics/footerIcons/basketIcon.svg'
+import plateIcon from '../pics/footerIcons/plateIcon.svg'
 import { Link } from 'react-router-dom'
 
 const StyledFooter = styled.footer`
