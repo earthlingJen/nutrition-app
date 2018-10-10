@@ -181,4 +181,21 @@ describe('reducer', () => {
       })
     })
   })
+
+  describe(ACTIONS.FOOD_ON_PLATE, () => {
+    it('puts picked food in foodOnPlate', () => {
+      const state = {
+        foodOnPlate: null,
+      }
+
+      const action = {
+        type: ACTIONS.FOOD_ON_PLATE,
+        payload: { veggieIcon: 'spinach' },
+      }
+
+      expect(reducer(state, action)).toEqual({
+        foodOnPlate: { veggieIcon: 'spinach' },
+      })
+    })
+  })
 })
