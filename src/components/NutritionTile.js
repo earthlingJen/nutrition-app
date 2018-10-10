@@ -24,11 +24,12 @@ export default class NutritionTile extends Component {
     nutriName: PropTypes.string,
     nutriValue: PropTypes.any,
     nutriUnit: PropTypes.string,
+    tileColor: PropTypes.string,
   }
   render() {
-    const { nutriName, nutriValue, nutriUnit } = this.props
+    const { nutriName, nutriValue, nutriUnit, tileColor } = this.props
     return (
-      <StyledTile>
+      <StyledTile style={{ background: tileColor }}>
         <div>{nutriName}</div>
         <div>{nutriValue}</div>
         <div>{nutriUnit}</div>

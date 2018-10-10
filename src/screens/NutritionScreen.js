@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom'
 import { StyledHeader } from '../components/Header'
 import Footer from '../components/Footer'
 
+let tileColor
+
 const StyledBody = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 6fr 1fr;
@@ -69,15 +71,10 @@ export default class NutritionScreen extends Component {
           this.props.nutriSum[selectedNutrition.nutriName]
       )
 
-      // const colorTile = () => {
-      //   let tileColor
-      //   selectedNutrition.nutriName,
-      //   selectedNutrition.nutriValue <=
-      //     this.props.nutriSum[selectedNutrition.nutriName]
-      //     ? tileColor === 'green'
-      //     : tileColor === 'white'
-      // }
-      // colorTile()
+      // selectedNutrition.nutriValue <=
+      // this.props.nutriSum[selectedNutrition.nutriName]
+      //   ? tileColor === 'green'
+      //   : tileColor === 'white'
 
       return (
         <Link
@@ -91,7 +88,7 @@ export default class NutritionScreen extends Component {
             nutriName={nutrition.nutriName}
             nutriValue={nutrition[sex][age]}
             nutriUnit={nutrition.unit}
-            style={{ background: 'tileColor' }}
+            tileColor={tileColor}
           />
         </Link>
       )
