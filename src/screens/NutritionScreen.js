@@ -68,13 +68,14 @@ export default class NutritionScreen extends Component {
       console.log(
         selectedNutrition.nutriName,
         selectedNutrition.nutriValue <=
-          this.props.nutriSum[selectedNutrition.nutriName]
+          this.props.nutriSum[selectedNutrition.nutriName],
+        tileColor
       )
 
-      // selectedNutrition.nutriValue <=
-      // this.props.nutriSum[selectedNutrition.nutriName]
-      //   ? tileColor === 'green'
-      //   : tileColor === 'white'
+      selectedNutrition.nutriValue <=
+      this.props.nutriSum[selectedNutrition.nutriName]
+        ? (tileColor = '#50e3793b')
+        : (tileColor = 'white')
 
       return (
         <Link
