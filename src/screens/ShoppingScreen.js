@@ -45,7 +45,7 @@ export default class ShoppingScreen extends Component {
         <img
           src={basket}
           alt="shopping basket"
-          style={{ alignItems: 'center', margin: '7px auto', width: '30%' }}
+          style={{ alignItems: 'center', margin: '7px auto', width: '102px' }}
         />
         <Footer />
       </StyledBody>

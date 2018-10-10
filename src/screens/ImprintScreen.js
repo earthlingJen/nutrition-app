@@ -30,7 +30,7 @@ export default class ImprintScreen extends Component {
             Bei Jod und Selen wird dringend empfohlen, die entsprechende
             Tagesdosis nicht zu überschreiten.
           </p>
-          <br />
+
           <h4>Quellen: </h4>
           <p>
             <a href="">Die große vegane Nährwerttabelle</a> von Katharina Petter

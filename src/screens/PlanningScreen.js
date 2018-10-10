@@ -34,17 +34,16 @@ const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   justify-content: center;
-  margin-top: -40px;
 `
 const StyledPlate = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  position: relative;
 `
 const StyledImg = styled.img`
-  position: relative;
-  top: 50px;
+  position: absolute;
+  bottom: 32px;
   height: 60px;
 `
 const StyledContainer = styled.div`
@@ -61,7 +60,7 @@ const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  height: 400px;
+  height: 345px;
 `
 export default class PlanningScreen extends Component {
   static propTypes = {
