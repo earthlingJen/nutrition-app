@@ -25,7 +25,11 @@ export default class ImprintScreen extends Component {
         <Container>
           <h4>Anmerkungen:</h4>
           <p>* = es liegen keine Daten vor</p>
-          <p>Alle Angaben ohne Gewähr.</p>
+          <p>Alle Angaben sind ohne Gewähr.</p>
+          <p>
+            Bei Jod und Selen wird dringend empfohlen, die entsprechende
+            Tagesdosis nicht zu überschreiten.
+          </p>
           <br />
           <h4>Quellen: </h4>
           <p>
@@ -48,6 +52,9 @@ export default class ImprintScreen extends Component {
             >
               CC 3.0 BY
             </a>
+          </p>
+          <p>
+            Vielen Dank an Susann Neziri für die Beratung zu den Nährstoffdaten.
           </p>
         </Container>
         <Footer />

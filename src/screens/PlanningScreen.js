@@ -28,7 +28,7 @@ const StyledP = styled.p`
   text-align: right;
   margin: 0 20px;
   position: relative;
-  bottom: 20px;
+  bottom: 40px;
 `
 const StyledMain = styled.div`
   display: grid;
@@ -40,7 +40,7 @@ const StyledPlate = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -20px;
+  margin-top: 10px;
 `
 const StyledImg = styled.img`
   position: relative;
