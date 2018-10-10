@@ -20,7 +20,7 @@ const StyledDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 150px;
+  height: 127px;
   min-width: 192px;
 `
 
