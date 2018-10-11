@@ -17,6 +17,7 @@ const mapStateToProps = state => ({
   pickedFoodType: state.pickedFoodType,
   foodOnPlate: state.foodOnPlate,
   amount: state.amount,
+  seleniumTooHigh: state.seleniumTooHigh,
 })
 
 const mapDispatchToProps = dispatch => ({

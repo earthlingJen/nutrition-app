@@ -35,6 +35,8 @@ const initialState = /*load('app') ||*/ {
   pickedFoodType: 'veggies',
   foodOnPlate: null,
   amount: 100,
+  seleniumTooHigh: false,
+  // iodineOverdose: false,
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -97,6 +99,12 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       foodOnPlate: action.payload,
+    }
+
+  case ACTIONS.SELENIUM_OVERDOSE:
+    return {
+      ...state,
+      seleniumTooHigh: true,
     }
 
   default:

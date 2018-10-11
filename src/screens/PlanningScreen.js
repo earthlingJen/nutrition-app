@@ -9,12 +9,11 @@ import FoodTypeSelect from '../components/FoodTypeSelect'
 import PieChart from '../components/PieChart'
 import { StyledHeader } from '../components/Header'
 import Footer from '../components/Footer'
-//import spinach from '../pics/spinach.svg'
 
 const StyledBody = styled.div`
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr 6fr 1fr;
+  grid-template-rows: 1fr 2fr 0fr 1fr;
   flex-direction: column;
 `
 const StyledSubHeader = styled.div`
@@ -24,11 +23,19 @@ const StyledSubHeader = styled.div`
   justify-content: space-between;
   max-width: 355px;
 `
+const StyledSpan = styled.span`
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+  opacity:0;
+   /* ${props => props.opacity}; */
+`
+
 const StyledP = styled.p`
   text-align: right;
   margin: 0 20px;
   position: relative;
-  bottom: 40px;
+  bottom: 52px;
 `
 const StyledMain = styled.div`
   display: grid;
@@ -77,6 +84,7 @@ export default class PlanningScreen extends Component {
     amount: PropTypes.number,
     foodOnPlate: PropTypes.any,
     renderFoodOnPlate: PropTypes.func,
+    seleniumTooHigh: PropTypes.bool,
   }
 
   renderList() {
@@ -89,7 +97,6 @@ export default class PlanningScreen extends Component {
       )
     })
   }
-
   renderFoodTiles() {
     const {
       veggies,
@@ -194,7 +201,7 @@ export default class PlanningScreen extends Component {
         })
 
     default:
-      return console.log('no valid select value')
+      return null
     }
   }
 
@@ -208,7 +215,11 @@ export default class PlanningScreen extends Component {
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
-    const { nutriSum, setSelectFood, foodOnPlate } = this.props
+    const {
+      nutriSum,
+      setSelectFood,
+      foodOnPlate /*seleniumTooHigh*/,
+    } = this.props
 
     return (
       <StyledBody>
@@ -228,6 +239,9 @@ export default class PlanningScreen extends Component {
 
           <FoodTypeSelect setSelectFood={setSelectFood} />
         </StyledSubHeader>
+        <StyledSpan /*opacity={seleniumTooHigh ? 1 : 0}*/>
+          Achtung! Selen/Jod überschritten!
+        </StyledSpan>
         <StyledP>pro 100g</StyledP>
 
         <StyledMain>

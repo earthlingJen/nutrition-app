@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom'
 import { StyledHeader } from '../components/Header'
 import Footer from '../components/Footer'
 
-let tileColor
-
 const StyledBody = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 6fr 1fr;
@@ -52,10 +50,12 @@ export default class NutritionScreen extends Component {
     nutriNeeds: PropTypes.arrayOf(PropTypes.object),
     saveValue: PropTypes.func,
     nutriSum: PropTypes.object,
+    seleniumOverdose: PropTypes.func,
+    seleniumTooHigh: PropTypes.bool,
   }
 
   renderNutriTiles() {
-    const { user, nutriNeeds, saveValue } = this.props
+    const { user, nutriNeeds, saveValue /*seleniumOverdose*/ } = this.props
     const { sex, age } = user
 
     return nutriNeeds.map((nutrition, index) => {
@@ -70,18 +70,23 @@ export default class NutritionScreen extends Component {
         selectedNutrition.nutriValue <=
         this.props.nutriSum[selectedNutrition.nutriName]
 
-      const rot = '#ff000059'
-      const grün = '#50e3793b'
-
+      const red = '#ff000059'
+      const green = '#50e3793b'
+      let tileColor
       switch (tile) {
       case 'Selen':
-        tooMuch ? (tileColor = rot) : (tileColor = 'white')
+        if (tooMuch) {
+          // seleniumOverdose()
+          tileColor = red
+        } else {
+          tileColor = 'white'
+        }
         break
       case 'Jod':
-        tooMuch ? (tileColor = rot) : (tileColor = 'white')
+        tooMuch ? (tileColor = red) : (tileColor = 'white')
         break
       default:
-        tooMuch ? (tileColor = grün) : (tileColor = 'white')
+        tooMuch ? (tileColor = green) : (tileColor = 'white')
       }
 
       return (
