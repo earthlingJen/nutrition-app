@@ -40,6 +40,7 @@ const initialState = /*load('app') ||*/ {
 }
 
 export default function reducer(state = initialState, action = {}) {
+  let index
   switch (action.type) {
   case ACTIONS.SET_SELECT_SEX:
     return {
@@ -105,6 +106,16 @@ export default function reducer(state = initialState, action = {}) {
     return {
       ...state,
       seleniumTooHigh: true,
+    }
+
+  case ACTIONS.DELETE_FOOD:
+    index = action.payload
+    return {
+      ...state,
+      pickedFood: [
+        ...state.pickedFood.slice(0, index),
+        ...state.pickedFood.slice(index + 1),
+      ],
     }
 
   default:

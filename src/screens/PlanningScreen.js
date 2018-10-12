@@ -27,8 +27,7 @@ const StyledSpan = styled.span`
   text-align: center;
   color: red;
   margin-top: 10px;
-  opacity:0;
-   /* ${props => props.opacity}; */
+  opacity: ${props => props.opacity};
 `
 
 const StyledP = styled.p`
@@ -63,6 +62,9 @@ const StyledList = styled.ul`
   width: 182px;
   box-shadow: 0 2px 10px grey;
 `
+// const StyledButton = styled.button`
+//   border: solid 1px;
+// `
 const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
@@ -85,15 +87,22 @@ export default class PlanningScreen extends Component {
     foodOnPlate: PropTypes.any,
     renderFoodOnPlate: PropTypes.func,
     seleniumTooHigh: PropTypes.bool,
+    deleteFood: PropTypes.func,
   }
 
   renderList() {
-    const { pickedFood, amount } = this.props
+    const { pickedFood, amount /*deleteFood*/ } = this.props
     return pickedFood.map((food, index) => {
       return (
-        <li key={index}>
-          {amount}g {food.name}
-        </li>
+        <span
+          key={index}
+          style={{ display: 'flex', justifyContent: 'space-between' }}
+        >
+          <li>
+            {amount}g {food.name}
+          </li>
+          {/* <StyledButton onClick={() => deleteFood(index)}>&times;</StyledButton> */}
+        </span>
       )
     })
   }
@@ -215,11 +224,7 @@ export default class PlanningScreen extends Component {
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
-    const {
-      nutriSum,
-      setSelectFood,
-      foodOnPlate /*seleniumTooHigh*/,
-    } = this.props
+    const { nutriSum, setSelectFood, foodOnPlate, seleniumTooHigh } = this.props
 
     return (
       <StyledBody>
@@ -239,7 +244,7 @@ export default class PlanningScreen extends Component {
 
           <FoodTypeSelect setSelectFood={setSelectFood} />
         </StyledSubHeader>
-        <StyledSpan /*opacity={seleniumTooHigh ? 1 : 0}*/>
+        <StyledSpan opacity={seleniumTooHigh ? 1 : 0}>
           Achtung! Selen/Jod überschritten!
         </StyledSpan>
         <StyledP>pro 100g</StyledP>

@@ -5,6 +5,7 @@ import {
   updatePickedFood,
   setSelectFood,
   renderFoodOnPlate,
+  deleteFood,
 } from '../actions'
 
 const mapStateToProps = state => ({
@@ -25,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
   updatePickedFood: value => dispatch(updatePickedFood(value)),
   setSelectFood: value => dispatch(setSelectFood(value)),
   renderFoodOnPlate: value => dispatch(renderFoodOnPlate(value)),
+  deleteFood: value => dispatch(deleteFood(value)),
 })
 
 export default connect(
