@@ -33,8 +33,10 @@ export default class ImprintScreen extends Component {
 
           <h4>Quellen: </h4>
           <p>
-            <a href="">Die große vegane Nährwerttabelle</a> von Katharina Petter
-            und Tobias Pohlmann von 2007{' '}
+            <a href="http://www.veganity.com/GVNWT/Naehrwerttabelle.pdf">
+              Die große vegane Nährwerttabelle
+            </a>{' '}
+            von Katharina Petter und Tobias Pohlmann von 2007{' '}
           </p>
           <p>
             Nahrungsmittelicons stammen zum Großteil von{' '}
