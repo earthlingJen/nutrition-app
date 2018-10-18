@@ -35,8 +35,8 @@ export default class ShoppingScreen extends Component {
             return (
               <ShoppingTile
                 key={index}
-                veggieName={veggie.name}
-                veggieIcon={veggie.icon}
+                foodName={veggie.name}
+                foodIcon={veggie.icon}
                 amount={this.props.amount}
               />
             )

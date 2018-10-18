@@ -7,8 +7,8 @@ import walnut from '../pics/nutsIcons/walnut.svg'
 
 export const nuts = [
   {
-    veggieName: 'Mandeln',
-    veggieIcon: almond,
+    foodName: 'Mandeln',
+    foodIcon: almond,
     Magnesium: {
       veggieValue: 170,
       unit: 'mg',
@@ -47,8 +47,8 @@ export const nuts = [
     },
   },
   {
-    veggieName: 'Cashews',
-    veggieIcon: cashews,
+    foodName: 'Cashews',
+    foodIcon: cashews,
     Magnesium: {
       veggieValue: 270,
       unit: 'mg',
@@ -87,8 +87,8 @@ export const nuts = [
     },
   },
   {
-    veggieName: 'Paranuss',
-    veggieIcon: brazilnuts,
+    foodName: 'Paranuss',
+    foodIcon: brazilnuts,
     Magnesium: {
       veggieValue: 160,
       unit: 'mg',
@@ -127,8 +127,8 @@ export const nuts = [
     },
   },
   {
-    veggieName: 'Pistazie',
-    veggieIcon: pistachio,
+    foodName: 'Pistazie',
+    foodIcon: pistachio,
     Magnesium: {
       veggieValue: 160,
       unit: 'mg',
@@ -167,8 +167,8 @@ export const nuts = [
     },
   },
   {
-    veggieName: 'Walnüsse',
-    veggieIcon: walnut,
+    foodName: 'Walnüsse',
+    foodIcon: walnut,
     Magnesium: {
       veggieValue: 135,
       unit: 'mg',
@@ -207,8 +207,8 @@ export const nuts = [
     },
   },
   {
-    veggieName: 'Erdnuss',
-    veggieIcon: peanut,
+    foodName: 'Erdnuss',
+    foodIcon: peanut,
     Magnesium: {
       veggieValue: 163,
       unit: 'mg',

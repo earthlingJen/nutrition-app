@@ -8,8 +8,8 @@ import strawberry from '../pics/fruitsIcons/strawberry.svg'
 
 export const fruits = [
   {
-    veggieName: 'Aprikose getr.',
-    veggieIcon: apricot,
+    foodName: 'Aprikose getr.',
+    foodIcon: apricot,
     Magnesium: {
       veggieValue: 50,
       unit: 'mg',
@@ -48,8 +48,8 @@ export const fruits = [
     },
   },
   {
-    veggieName: 'Banane',
-    veggieIcon: banana,
+    foodName: 'Banane',
+    foodIcon: banana,
     Magnesium: {
       veggieValue: 31,
       unit: 'mg',
@@ -89,8 +89,8 @@ export const fruits = [
   },
 
   {
-    veggieName: 'Ananas',
-    veggieIcon: pineapple,
+    foodName: 'Ananas',
+    foodIcon: pineapple,
     Magnesium: {
       veggieValue: 17,
       unit: 'mg',
@@ -129,8 +129,8 @@ export const fruits = [
     },
   },
   {
-    veggieName: 'Orange',
-    veggieIcon: orange,
+    foodName: 'Orange',
+    foodIcon: orange,
     Magnesium: {
       veggieValue: 14,
       unit: 'mg',
@@ -169,8 +169,8 @@ export const fruits = [
     },
   },
   {
-    veggieName: 'Birne',
-    veggieIcon: pear,
+    foodName: 'Birne',
+    foodIcon: pear,
     Magnesium: {
       veggieValue: 8,
       unit: 'mg',
@@ -210,8 +210,8 @@ export const fruits = [
   },
 
   {
-    veggieName: 'Pfirsich',
-    veggieIcon: peach,
+    foodName: 'Pfirsich',
+    foodIcon: peach,
     Magnesium: {
       veggieValue: 9,
       unit: 'mg',
@@ -251,8 +251,8 @@ export const fruits = [
   },
 
   {
-    veggieName: 'Erdbeere',
-    veggieIcon: strawberry,
+    foodName: 'Erdbeere',
+    foodIcon: strawberry,
     Magnesium: {
       veggieValue: 15,
       unit: 'mg',

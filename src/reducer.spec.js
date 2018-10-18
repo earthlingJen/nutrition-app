@@ -190,11 +190,11 @@ describe('reducer', () => {
 
       const action = {
         type: ACTIONS.FOOD_ON_PLATE,
-        payload: { veggieIcon: 'spinach' },
+        payload: { foodIcon: 'spinach' },
       }
 
       expect(reducer(state, action)).toEqual({
-        foodOnPlate: { veggieIcon: 'spinach' },
+        foodOnPlate: { foodIcon: 'spinach' },
       })
     })
   })

@@ -26,8 +26,8 @@ export default class ShoppingTile extends Component {
 
   static propTypes = {
     onClick: PropTypes.func,
-    veggieName: PropTypes.string,
-    veggieIcon: PropTypes.string,
+    foodName: PropTypes.string,
+    foodIcon: PropTypes.string,
     amount: PropTypes.number,
     changeColor: PropTypes.string,
   }
@@ -39,14 +39,14 @@ export default class ShoppingTile extends Component {
   }
 
   render() {
-    const { veggieName, veggieIcon, amount } = this.props
+    const { foodName, foodIcon, amount } = this.props
     return (
       <StyledTile
         onClick={() => this.inBasket()}
         style={{ background: this.state.colorChange }}
       >
-        <div>{veggieName}</div>
-        <img src={veggieIcon} alt={veggieName} style={{ width: '20px' }} />
+        <div>{foodName}</div>
+        <img src={foodIcon} alt={foodName} style={{ width: '20px' }} />
         <div>{amount} g</div>
       </StyledTile>
     )

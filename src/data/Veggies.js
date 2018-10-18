@@ -8,8 +8,8 @@ import tomato from '../pics/veggieIcons/tomato.svg'
 
 export const veggies = [
   {
-    veggieName: 'Brokkoli',
-    veggieIcon: broccoli,
+    foodName: 'Brokkoli',
+    foodIcon: broccoli,
     Magnesium: {
       veggieValue: 24,
       unit: 'mg',
@@ -50,8 +50,8 @@ export const veggies = [
   },
 
   {
-    veggieName: 'Spinat',
-    veggieIcon: spinach,
+    foodName: 'Spinat',
+    foodIcon: spinach,
     Magnesium: {
       veggieValue: 58,
       unit: 'mg',
@@ -91,8 +91,8 @@ export const veggies = [
   },
 
   {
-    veggieName: 'Zwiebel (getr.)',
-    veggieIcon: onion,
+    foodName: 'Zwiebel (getr.)',
+    foodIcon: onion,
     Magnesium: {
       veggieValue: 0,
       unit: 'mg*',
@@ -132,8 +132,8 @@ export const veggies = [
   },
 
   {
-    veggieName: 'Tomate',
-    veggieIcon: tomato,
+    foodName: 'Tomate',
+    foodIcon: tomato,
     Magnesium: {
       veggieValue: 14,
       unit: 'mg',
@@ -172,8 +172,8 @@ export const veggies = [
     },
   },
   {
-    veggieName: 'Paprika',
-    veggieIcon: pepper,
+    foodName: 'Paprika',
+    foodIcon: pepper,
     Magnesium: {
       veggieValue: 12,
       unit: 'mg',
@@ -212,8 +212,8 @@ export const veggies = [
     },
   },
   {
-    veggieName: 'Gurke',
-    veggieIcon: cucumber,
+    foodName: 'Gurke',
+    foodIcon: cucumber,
     Magnesium: {
       veggieValue: 8,
       unit: 'mg',
@@ -252,8 +252,8 @@ export const veggies = [
     },
   },
   {
-    veggieName: 'Kürbis',
-    veggieIcon: pumpkin,
+    foodName: 'Kürbis',
+    foodIcon: pumpkin,
     Magnesium: {
       veggieValue: 8,
       unit: 'mg',
