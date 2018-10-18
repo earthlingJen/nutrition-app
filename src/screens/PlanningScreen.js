@@ -36,6 +36,11 @@ const StyledP = styled.p`
   position: relative;
   bottom: 52px;
 `
+const StyledInput = styled.input`
+  width: 42px;
+  font-size: 20px;
+  border: solid 1px;
+`
 const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -214,6 +219,10 @@ export default class PlanningScreen extends Component {
     }
   }
 
+  calculateAmount() {
+    console.log('test')
+  }
+
   calculatePie() {
     const { nutriName, nutriValue } = this.props.selectedNutrition
 
@@ -247,7 +256,15 @@ export default class PlanningScreen extends Component {
         <StyledSpan opacity={seleniumTooHigh ? 1 : 0}>
           Achtung! Selen/Jod überschritten!
         </StyledSpan>
-        <StyledP>pro 100g</StyledP>
+        <StyledP>
+          pro{' '}
+          <StyledInput
+            type="text"
+            placeholder="100"
+            onChange={() => this.calculateAmount()}
+          />{' '}
+          g
+        </StyledP>
 
         <StyledMain>
           <div>
