@@ -71,16 +71,16 @@ export default function reducer(state = initialState, action = {}) {
       ...state,
       nutriSum: {
         Magnesium:
-            state.nutriSum.Magnesium + action.payload.Magnesium.veggieValue,
-        Kalzium: state.nutriSum.Kalzium + action.payload.Kalzium.veggieValue,
-        Eisen: state.nutriSum.Eisen + action.payload.Eisen.veggieValue,
-        Zink: state.nutriSum.Zink + action.payload.Zink.veggieValue / 1000,
-        Jod: state.nutriSum.Jod + action.payload.Jod.veggieValue / 1000,
-        Selen: state.nutriSum.Selen + action.payload.Selen.veggieValue,
-        VitA: state.nutriSum.VitA + action.payload.VitA.veggieValue / 1000,
-        VitB2: state.nutriSum.VitB2 + action.payload.VitB2.veggieValue / 1000,
+            state.nutriSum.Magnesium + action.payload.Magnesium.foodValue,
+        Kalzium: state.nutriSum.Kalzium + action.payload.Kalzium.foodValue,
+        Eisen: state.nutriSum.Eisen + action.payload.Eisen.foodValue,
+        Zink: state.nutriSum.Zink + action.payload.Zink.foodValue / 1000,
+        Jod: state.nutriSum.Jod + action.payload.Jod.foodValue / 1000,
+        Selen: state.nutriSum.Selen + action.payload.Selen.foodValue,
+        VitA: state.nutriSum.VitA + action.payload.VitA.foodValue / 1000,
+        VitB2: state.nutriSum.VitB2 + action.payload.VitB2.foodValue / 1000,
         Folsäure:
-            state.nutriSum.Folsäure + action.payload.Folsäure.veggieValue,
+            state.nutriSum.Folsäure + action.payload.Folsäure.foodValue,
       },
     }
 

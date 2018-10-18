@@ -129,86 +129,87 @@ export default class PlanningScreen extends Component {
       return veggies
         .sort(
           (a, b) =>
-            b[selectedNutrition.nutriName].veggieValue -
-              a[selectedNutrition.nutriName].veggieValue
+            b[selectedNutrition.nutriName].foodValue -
+              a[selectedNutrition.nutriName].foodValue
         )
-        .map((veggie, index) => {
-          const mappedVeggie = veggie[selectedNutrition.nutriName]
+        .map((food, index) => {
+          const mappedFood = food[selectedNutrition.nutriName]
           const foodForList = {
-            name: veggie.foodName,
-            icon: veggie.foodIcon,
+            name: food.foodName,
+            icon: food.foodIcon,
             amount: amount,
           }
 
           return (
             <FoodTile
               key={index}
-              foodName={veggie.foodName}
-              foodIcon={veggie.foodIcon}
-              veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
+              foodName={food.foodName}
+              foodIcon={food.foodIcon}
+              foodValue={mappedFood.foodValue + ' ' + mappedFood.unit}
               onClick={() => {
-                updateNutriSum(veggie)
+                updateNutriSum(food)
                 updatePickedFood(foodForList)
-                renderFoodOnPlate(veggie.foodIcon)
+                renderFoodOnPlate(food.foodIcon)
               }}
             />
           )
         })
 
-    case 'fruits': //rename fruits and veggies in food!
+    case 'fruits':
       return fruits
         .sort(
           (a, b) =>
-            b[selectedNutrition.nutriName].veggieValue -
-              a[selectedNutrition.nutriName].veggieValue
+            b[selectedNutrition.nutriName].foodValue -
+              a[selectedNutrition.nutriName].foodValue
         )
-        .map((veggie, index) => {
-          const mappedFruit = veggie[selectedNutrition.nutriName]
+        .map((food, index) => {
+          const mappedFood = food[selectedNutrition.nutriName]
 
           const foodForList = {
-            name: veggie.foodName,
-            icon: veggie.foodIcon,
+            name: food.foodName,
+            icon: food.foodIcon,
             amount: amount,
           }
           return (
             <FoodTile
               key={index}
-              foodName={veggie.foodName}
-              foodIcon={veggie.foodIcon}
-              veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
+              foodName={food.foodName}
+              foodIcon={food.foodIcon}
+              foodValue={mappedFood.foodValue + ' ' + mappedFood.unit}
               onClick={() => {
-                updateNutriSum(veggie)
+                updateNutriSum(food)
                 updatePickedFood(foodForList)
-                renderFoodOnPlate(veggie.foodIcon)
+                renderFoodOnPlate(food.foodIcon)
               }}
             />
           )
         })
 
-    case 'nuts': //rename fruits and veggies in food!
+    case 'nuts':
       return nuts
         .sort(
           (a, b) =>
-            b[selectedNutrition.nutriName].veggieValue -
-              a[selectedNutrition.nutriName].veggieValue
+            b[selectedNutrition.nutriName].foodValue -
+              a[selectedNutrition.nutriName].foodValue
         )
-        .map((veggie, index) => {
-          const mappedFruit = veggie[selectedNutrition.nutriName]
+        .map((food, index) => {
+          const mappedFood = food[selectedNutrition.nutriName]
+
           const foodForList = {
-            name: veggie.foodName,
-            icon: veggie.foodIcon,
+            name: food.foodName,
+            icon: food.foodIcon,
             amount: amount,
           }
           return (
             <FoodTile
               key={index}
-              foodName={veggie.foodName}
-              foodIcon={veggie.foodIcon}
-              veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
+              foodName={food.foodName}
+              foodIcon={food.foodIcon}
+              foodValue={mappedFood.foodValue + ' ' + mappedFood.unit}
               onClick={() => {
-                updateNutriSum(veggie)
+                updateNutriSum(food)
                 updatePickedFood(foodForList)
-                renderFoodOnPlate(veggie.foodIcon)
+                renderFoodOnPlate(food.foodIcon)
               }}
             />
           )

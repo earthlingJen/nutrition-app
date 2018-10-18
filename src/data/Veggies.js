@@ -11,40 +11,40 @@ export const veggies = [
     foodName: 'Brokkoli',
     foodIcon: broccoli,
     Magnesium: {
-      veggieValue: 24,
+      foodValue: 24,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 58,
+      foodValue: 58,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 0.8,
+      foodValue: 0.8,
       unit: 'mg',
     },
 
     Zink: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     Jod: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'ng*',
     },
     Selen: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     VitA: {
-      veggieValue: 70,
+      foodValue: 70,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 200,
+      foodValue: 200,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
   },
@@ -53,39 +53,39 @@ export const veggies = [
     foodName: 'Spinat',
     foodIcon: spinach,
     Magnesium: {
-      veggieValue: 58,
+      foodValue: 58,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 117,
+      foodValue: 117,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 3.4,
+      foodValue: 3.4,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 617,
+      foodValue: 617,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 12,
+      foodValue: 12,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 0.8,
+      foodValue: 0.8,
       unit: 'µg',
     },
     VitA: {
-      veggieValue: 795,
+      foodValue: 795,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 202,
+      foodValue: 202,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 154,
+      foodValue: 154,
       unit: 'µg',
     },
   },
@@ -94,39 +94,39 @@ export const veggies = [
     foodName: 'Zwiebel (getr.)',
     foodIcon: onion,
     Magnesium: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'mg*',
     },
     Kalzium: {
-      veggieValue: 162,
+      foodValue: 162,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 3.3,
+      foodValue: 3.3,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     Jod: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'ng*',
     },
     Selen: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     VitA: {
-      veggieValue: 43,
+      foodValue: 43,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 180,
+      foodValue: 180,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 110,
+      foodValue: 110,
       unit: 'µg',
     },
   },
@@ -135,39 +135,39 @@ export const veggies = [
     foodName: 'Tomate',
     foodIcon: tomato,
     Magnesium: {
-      veggieValue: 14,
+      foodValue: 14,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 235,
+      foodValue: 235,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 0.316,
+      foodValue: 0.316,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     Jod: {
-      veggieValue: 1100,
+      foodValue: 1100,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 1,
+      foodValue: 1,
       unit: 'µg',
     },
     VitA: {
-      veggieValue: 97,
+      foodValue: 97,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 35,
+      foodValue: 35,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 22,
+      foodValue: 22,
       unit: 'µg',
     },
   },
@@ -175,39 +175,39 @@ export const veggies = [
     foodName: 'Paprika',
     foodIcon: pepper,
     Magnesium: {
-      veggieValue: 12,
+      foodValue: 12,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 174,
+      foodValue: 174,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 0.402,
+      foodValue: 0.402,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 145,
+      foodValue: 145,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 1000,
+      foodValue: 1000,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 4300,
+      foodValue: 4300,
       unit: 'µg',
     },
     VitA: {
-      veggieValue: 179,
+      foodValue: 179,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 43,
+      foodValue: 43,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 57,
+      foodValue: 57,
       unit: 'µg',
     },
   },
@@ -215,39 +215,39 @@ export const veggies = [
     foodName: 'Gurke',
     foodIcon: cucumber,
     Magnesium: {
-      veggieValue: 8,
+      foodValue: 8,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 164,
+      foodValue: 164,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 0.223,
+      foodValue: 0.223,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 160,
+      foodValue: 160,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 2900,
+      foodValue: 2900,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 0.8,
+      foodValue: 0.8,
       unit: 'µg',
     },
     VitA: {
-      veggieValue: 62,
+      foodValue: 62,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 20,
+      foodValue: 20,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 15,
+      foodValue: 15,
       unit: 'µg',
     },
   },
@@ -255,39 +255,39 @@ export const veggies = [
     foodName: 'Kürbis',
     foodIcon: pumpkin,
     Magnesium: {
-      veggieValue: 8,
+      foodValue: 8,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 304,
+      foodValue: 304,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 0.8,
+      foodValue: 0.8,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 200,
+      foodValue: 200,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 1400,
+      foodValue: 1400,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     VitA: {
-      veggieValue: 128,
+      foodValue: 128,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 65,
+      foodValue: 65,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 36,
+      foodValue: 36,
       unit: 'µg',
     },
   },

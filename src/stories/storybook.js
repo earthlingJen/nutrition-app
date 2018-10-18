@@ -38,7 +38,7 @@ storiesOf('FoodTile', module)
     <FoodTile
       foodName={text('Veggie', 'Spinat')}
       foodIcon={spinach}
-      veggieValue={number('VeggieValue ', 300) + text('unit', ' mg')}
+      foodValue={number('VeggieValue ', 300) + text('unit', ' mg')}
     />
   ))
 

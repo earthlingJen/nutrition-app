@@ -104,31 +104,31 @@ describe('reducer', () => {
         type: ACTIONS.UPDATE_NUTRI_SUM,
         payload: {
           Magnesium: {
-            veggieValue: 0,
+            foodValue: 0,
           },
           Kalzium: {
-            veggieValue: 0,
+            foodValue: 0,
           },
           Eisen: {
-            veggieValue: 12,
+            foodValue: 12,
           },
           Zink: {
-            veggieValue: 0,
+            foodValue: 0,
           },
           Jod: {
-            veggieValue: 0,
+            foodValue: 0,
           },
           Selen: {
-            veggieValue: 0,
+            foodValue: 0,
           },
           VitA: {
-            veggieValue: 0,
+            foodValue: 0,
           },
           VitB2: {
-            veggieValue: 0,
+            foodValue: 0,
           },
           Folsäure: {
-            veggieValue: 0,
+            foodValue: 0,
           },
         },
       }
