@@ -79,8 +79,7 @@ export default function reducer(state = initialState, action = {}) {
         Selen: state.nutriSum.Selen + action.payload.Selen.foodValue,
         VitA: state.nutriSum.VitA + action.payload.VitA.foodValue / 1000,
         VitB2: state.nutriSum.VitB2 + action.payload.VitB2.foodValue / 1000,
-        Folsäure:
-            state.nutriSum.Folsäure + action.payload.Folsäure.foodValue,
+        Folsäure: state.nutriSum.Folsäure + action.payload.Folsäure.foodValue,
       },
     }
 

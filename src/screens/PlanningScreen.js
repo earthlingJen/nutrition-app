@@ -36,11 +36,11 @@ const StyledP = styled.p`
   position: relative;
   bottom: 52px;
 `
-const StyledInput = styled.input`
-  width: 42px;
-  font-size: 20px;
-  border: solid 1px;
-`
+// const StyledInput = styled.input`
+//   width: 42px;
+//   font-size: 20px;
+//   border: solid 1px;
+// `
 const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -258,12 +258,13 @@ export default class PlanningScreen extends Component {
           Achtung! Selen/Jod überschritten!
         </StyledSpan>
         <StyledP>
-          pro{' '}
+          pro 100
+          {/* {' '}
           <StyledInput
             type="text"
             placeholder="100"
             onChange={() => this.calculateAmount()}
-          />{' '}
+          />{' '} */}
           g
         </StyledP>
 

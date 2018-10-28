@@ -55,7 +55,7 @@ export default class NutritionScreen extends Component {
   }
 
   renderNutriTiles() {
-    const { user, nutriNeeds, saveValue, seleniumOverdose } = this.props
+    const { user, nutriNeeds, saveValue /*, seleniumOverdose*/ } = this.props
     const { sex, age } = user
 
     return nutriNeeds.map((nutrition, index) => {
@@ -76,7 +76,7 @@ export default class NutritionScreen extends Component {
       switch (tile) {
       case 'Selen':
         if (tooMuch) {
-          seleniumOverdose()
+          // seleniumOverdose()
           tileColor = red
         } else {
           tileColor = 'white'
