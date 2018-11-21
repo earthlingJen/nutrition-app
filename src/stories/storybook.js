@@ -10,7 +10,7 @@ import SexSelect from '../components/SexSelect'
 import { injectGlobal } from 'styled-components'
 import { action } from '@storybook/addon-actions'
 import FoodTypeSelect from '../components/FoodTypeSelect'
-import spinach from '../pics/veggieIcons/spinach.svg'
+import spinach from '../pics/foodIcons/spinach.svg'
 import PieChart from '../components/PieChart'
 import AnimatedLogo from '../components/AnimatedLogo'
 import Footer from '../components/Footer'
@@ -36,9 +36,9 @@ storiesOf('FoodTile', module)
   .addDecorator(withKnobs)
   .add('with text', () => (
     <FoodTile
-      veggieName={text('Veggie', 'Spinat')}
-      veggieIcon={spinach}
-      veggieValue={number('VeggieValue ', 300) + text('unit', ' mg')}
+      foodName={text('Veggie', 'Spinat')}
+      foodIcon={spinach}
+      foodValue={number('VeggieValue ', 300) + text('unit', ' mg')}
     />
   ))
 
@@ -80,8 +80,8 @@ storiesOf('ShoppingTile', module)
   .addDecorator(withKnobs)
   .add('with content', () => (
     <ShoppingTile
-      veggieName={text('veggieName', 'Spinach')}
-      veggieIcon={spinach}
+      foodName={text('foodName', 'Spinach')}
+      foodIcon={spinach}
       amount={number('amount', 100)}
     />
   ))

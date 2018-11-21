@@ -7,242 +7,242 @@ import walnut from '../pics/nutsIcons/walnut.svg'
 
 export const nuts = [
   {
-    veggieName: 'Mandeln',
-    veggieIcon: almond,
+    foodName: 'Mandeln',
+    foodIcon: almond,
     Magnesium: {
-      veggieValue: 170,
+      foodValue: 170,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 252,
+      foodValue: 252,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 4.1,
+      foodValue: 4.1,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 2200,
+      foodValue: 2200,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 2000,
+      foodValue: 2000,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 3.5,
+      foodValue: 3.5,
       unit: 'µg',
     },
     VitA: {
-      veggieValue: 20,
+      foodValue: 20,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 620,
+      foodValue: 620,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 45,
+      foodValue: 45,
       unit: 'µg',
     },
   },
   {
-    veggieName: 'Cashews',
-    veggieIcon: cashews,
+    foodName: 'Cashews',
+    foodIcon: cashews,
     Magnesium: {
-      veggieValue: 270,
+      foodValue: 270,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 552,
+      foodValue: 552,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 2.8,
+      foodValue: 2.8,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 2100,
+      foodValue: 2100,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 10000,
+      foodValue: 10000,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     VitA: {
-      veggieValue: 10,
+      foodValue: 10,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 260,
+      foodValue: 260,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
   },
   {
-    veggieName: 'Paranuss',
-    veggieIcon: brazilnuts,
+    foodName: 'Paranuss',
+    foodIcon: brazilnuts,
     Magnesium: {
-      veggieValue: 160,
+      foodValue: 160,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 644,
+      foodValue: 644,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 3.4,
+      foodValue: 3.4,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 4000,
+      foodValue: 4000,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 50,
+      foodValue: 50,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 103,
+      foodValue: 103,
       unit: 'µg',
     },
     VitA: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     VitB2: {
-      veggieValue: 35,
+      foodValue: 35,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 39,
+      foodValue: 39,
       unit: 'µg',
     },
   },
   {
-    veggieName: 'Pistazie',
-    veggieIcon: pistachio,
+    foodName: 'Pistazie',
+    foodIcon: pistachio,
     Magnesium: {
-      veggieValue: 160,
+      foodValue: 160,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 1020,
+      foodValue: 1020,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 7.3,
+      foodValue: 7.3,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 1400,
+      foodValue: 1400,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'ng*',
     },
     Selen: {
-      veggieValue: 6.4,
+      foodValue: 6.4,
       unit: 'µg',
     },
     VitA: {
-      veggieValue: 25,
+      foodValue: 25,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 200,
+      foodValue: 200,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 58,
+      foodValue: 58,
       unit: 'µg',
     },
   },
   {
-    veggieName: 'Walnüsse',
-    veggieIcon: walnut,
+    foodName: 'Walnüsse',
+    foodIcon: walnut,
     Magnesium: {
-      veggieValue: 135,
+      foodValue: 135,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 544,
+      foodValue: 544,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 2.5,
+      foodValue: 2.5,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 2700,
+      foodValue: 2700,
       unit: 'µg',
     },
     Jod: {
-      veggieValue: 3000,
+      foodValue: 3000,
       unit: 'ng',
     },
     Selen: {
-      veggieValue: 5.5,
+      foodValue: 5.5,
       unit: 'µg',
     },
     VitA: {
-      veggieValue: 8,
+      foodValue: 8,
       unit: 'µg',
     },
     VitB2: {
-      veggieValue: 120,
+      foodValue: 120,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 77,
+      foodValue: 77,
       unit: 'µg',
     },
   },
   {
-    veggieName: 'Erdnuss',
-    veggieIcon: peanut,
+    foodName: 'Erdnuss',
+    foodIcon: peanut,
     Magnesium: {
-      veggieValue: 163,
+      foodValue: 163,
       unit: 'mg',
     },
     Kalzium: {
-      veggieValue: 661,
+      foodValue: 661,
       unit: 'mg',
     },
     Eisen: {
-      veggieValue: 1.8,
+      foodValue: 1.8,
       unit: 'mg',
     },
     Zink: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     Jod: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'ng*',
     },
     Selen: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     VitA: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
     VitB2: {
-      veggieValue: 150,
+      foodValue: 150,
       unit: 'µg',
     },
     Folsäure: {
-      veggieValue: 0,
+      foodValue: 0,
       unit: 'µg*',
     },
   },

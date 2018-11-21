@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import NutritionTile from '../components/NutritionTile'
@@ -48,10 +49,13 @@ export default class NutritionScreen extends Component {
     user: PropTypes.object,
     nutriNeeds: PropTypes.arrayOf(PropTypes.object),
     saveValue: PropTypes.func,
+    nutriSum: PropTypes.object,
+    seleniumOverdose: PropTypes.func,
+    seleniumTooHigh: PropTypes.bool,
   }
 
   renderNutriTiles() {
-    const { user, nutriNeeds, saveValue } = this.props
+    const { user, nutriNeeds, saveValue /*, seleniumOverdose*/ } = this.props
     const { sex, age } = user
 
     return nutriNeeds.map((nutrition, index) => {
@@ -60,6 +64,31 @@ export default class NutritionScreen extends Component {
         nutriValue: nutrition[sex][age],
         nutriUnit: nutrition.unit,
       }
+
+      const tile = selectedNutrition.nutriName
+      const tooMuch =
+        selectedNutrition.nutriValue <=
+        this.props.nutriSum[selectedNutrition.nutriName]
+
+      const red = '#ff000059'
+      const green = '#50e3793b'
+      let tileColor
+      switch (tile) {
+      case 'Selen':
+        if (tooMuch) {
+          // seleniumOverdose()
+          tileColor = red
+        } else {
+          tileColor = 'white'
+        }
+        break
+      case 'Jod':
+        tooMuch ? (tileColor = red) : (tileColor = 'white')
+        break
+      default:
+        tooMuch ? (tileColor = green) : (tileColor = 'white')
+      }
+
       return (
         <Link
           to="/planning"
@@ -72,11 +101,13 @@ export default class NutritionScreen extends Component {
             nutriName={nutrition.nutriName}
             nutriValue={nutrition[sex][age]}
             nutriUnit={nutrition.unit}
+            tileColor={tileColor}
           />
         </Link>
       )
     })
   }
+
   render() {
     const { setSelectAge, setSelectSex } = this.props
     return (

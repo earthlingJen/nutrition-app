@@ -9,12 +9,11 @@ import FoodTypeSelect from '../components/FoodTypeSelect'
 import PieChart from '../components/PieChart'
 import { StyledHeader } from '../components/Header'
 import Footer from '../components/Footer'
-//import spinach from '../pics/spinach.svg'
 
 const StyledBody = styled.div`
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr 6fr 1fr;
+  grid-template-rows: 1fr 2fr 0fr 1fr;
   flex-direction: column;
 `
 const StyledSubHeader = styled.div`
@@ -24,27 +23,38 @@ const StyledSubHeader = styled.div`
   justify-content: space-between;
   max-width: 355px;
 `
+const StyledSpan = styled.span`
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+  opacity: ${props => props.opacity};
+`
+
 const StyledP = styled.p`
   text-align: right;
   margin: 0 20px;
   position: relative;
-  bottom: 20px;
+  bottom: 52px;
 `
+// const StyledInput = styled.input`
+//   width: 42px;
+//   font-size: 20px;
+//   border: solid 1px;
+// `
 const StyledMain = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   justify-content: center;
-  margin-top: -40px;
 `
 const StyledPlate = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -20px;
+  position: relative;
 `
 const StyledImg = styled.img`
-  position: relative;
-  top: 50px;
+  position: absolute;
+  bottom: 32px;
   height: 60px;
 `
 const StyledContainer = styled.div`
@@ -57,11 +67,14 @@ const StyledList = styled.ul`
   width: 182px;
   box-shadow: 0 2px 10px grey;
 `
+// const StyledButton = styled.button`
+//   border: solid 1px;
+// `
 const FoodBar = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  height: 400px;
+  height: 345px;
 `
 export default class PlanningScreen extends Component {
   static propTypes = {
@@ -78,19 +91,26 @@ export default class PlanningScreen extends Component {
     amount: PropTypes.number,
     foodOnPlate: PropTypes.any,
     renderFoodOnPlate: PropTypes.func,
+    seleniumTooHigh: PropTypes.bool,
+    deleteFood: PropTypes.func,
   }
 
   renderList() {
-    const { pickedFood, amount } = this.props
+    const { pickedFood, amount /*deleteFood*/ } = this.props
     return pickedFood.map((food, index) => {
       return (
-        <li key={index}>
-          {amount}g {food.name}
-        </li>
+        <span
+          key={index}
+          style={{ display: 'flex', justifyContent: 'space-between' }}
+        >
+          <li>
+            {amount}g {food.name}
+          </li>
+          {/* <StyledButton onClick={() => deleteFood(index)}>&times;</StyledButton> */}
+        </span>
       )
     })
   }
-
   renderFoodTiles() {
     const {
       veggies,
@@ -109,94 +129,99 @@ export default class PlanningScreen extends Component {
       return veggies
         .sort(
           (a, b) =>
-            b[selectedNutrition.nutriName].veggieValue -
-              a[selectedNutrition.nutriName].veggieValue
+            b[selectedNutrition.nutriName].foodValue -
+              a[selectedNutrition.nutriName].foodValue
         )
-        .map((veggie, index) => {
-          const mappedVeggie = veggie[selectedNutrition.nutriName]
+        .map((food, index) => {
+          const mappedFood = food[selectedNutrition.nutriName]
           const foodForList = {
-            name: veggie.veggieName,
-            icon: veggie.veggieIcon,
+            name: food.foodName,
+            icon: food.foodIcon,
             amount: amount,
           }
 
           return (
             <FoodTile
               key={index}
-              veggieName={veggie.veggieName}
-              veggieIcon={veggie.veggieIcon}
-              veggieValue={mappedVeggie.veggieValue + ' ' + mappedVeggie.unit}
+              foodName={food.foodName}
+              foodIcon={food.foodIcon}
+              foodValue={mappedFood.foodValue + ' ' + mappedFood.unit}
               onClick={() => {
-                updateNutriSum(veggie)
+                updateNutriSum(food)
                 updatePickedFood(foodForList)
-                renderFoodOnPlate(veggie.veggieIcon)
+                renderFoodOnPlate(food.foodIcon)
               }}
             />
           )
         })
 
-    case 'fruits': //rename fruits and veggies in food!
+    case 'fruits':
       return fruits
         .sort(
           (a, b) =>
-            b[selectedNutrition.nutriName].veggieValue -
-              a[selectedNutrition.nutriName].veggieValue
+            b[selectedNutrition.nutriName].foodValue -
+              a[selectedNutrition.nutriName].foodValue
         )
-        .map((veggie, index) => {
-          const mappedFruit = veggie[selectedNutrition.nutriName]
+        .map((food, index) => {
+          const mappedFood = food[selectedNutrition.nutriName]
 
           const foodForList = {
-            name: veggie.veggieName,
-            icon: veggie.veggieIcon,
+            name: food.foodName,
+            icon: food.foodIcon,
             amount: amount,
           }
           return (
             <FoodTile
               key={index}
-              veggieName={veggie.veggieName}
-              veggieIcon={veggie.veggieIcon}
-              veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
+              foodName={food.foodName}
+              foodIcon={food.foodIcon}
+              foodValue={mappedFood.foodValue + ' ' + mappedFood.unit}
               onClick={() => {
-                updateNutriSum(veggie)
+                updateNutriSum(food)
                 updatePickedFood(foodForList)
-                renderFoodOnPlate(veggie.veggieIcon)
+                renderFoodOnPlate(food.foodIcon)
               }}
             />
           )
         })
 
-    case 'nuts': //rename fruits and veggies in food!
+    case 'nuts':
       return nuts
         .sort(
           (a, b) =>
-            b[selectedNutrition.nutriName].veggieValue -
-              a[selectedNutrition.nutriName].veggieValue
+            b[selectedNutrition.nutriName].foodValue -
+              a[selectedNutrition.nutriName].foodValue
         )
-        .map((veggie, index) => {
-          const mappedFruit = veggie[selectedNutrition.nutriName]
+        .map((food, index) => {
+          const mappedFood = food[selectedNutrition.nutriName]
+
           const foodForList = {
-            name: veggie.veggieName,
-            icon: veggie.veggieIcon,
+            name: food.foodName,
+            icon: food.foodIcon,
             amount: amount,
           }
           return (
             <FoodTile
               key={index}
-              veggieName={veggie.veggieName}
-              veggieIcon={veggie.veggieIcon}
-              veggieValue={mappedFruit.veggieValue + ' ' + mappedFruit.unit}
+              foodName={food.foodName}
+              foodIcon={food.foodIcon}
+              foodValue={mappedFood.foodValue + ' ' + mappedFood.unit}
               onClick={() => {
-                updateNutriSum(veggie)
+                updateNutriSum(food)
                 updatePickedFood(foodForList)
-                renderFoodOnPlate(veggie.veggieIcon)
+                renderFoodOnPlate(food.foodIcon)
               }}
             />
           )
         })
 
     default:
-      return console.log('no valid select value')
+      return null
     }
+  }
+
+  calculateAmount() {
+    console.log('test')
   }
 
   calculatePie() {
@@ -209,7 +234,7 @@ export default class PlanningScreen extends Component {
 
   render() {
     const { nutriName, nutriValue, nutriUnit } = this.props.selectedNutrition
-    const { nutriSum, setSelectFood, foodOnPlate } = this.props
+    const { nutriSum, setSelectFood, foodOnPlate, seleniumTooHigh } = this.props
 
     return (
       <StyledBody>
@@ -229,7 +254,19 @@ export default class PlanningScreen extends Component {
 
           <FoodTypeSelect setSelectFood={setSelectFood} />
         </StyledSubHeader>
-        <StyledP>pro 100g</StyledP>
+        <StyledSpan opacity={seleniumTooHigh ? 1 : 0}>
+          Achtung! Selen/Jod überschritten!
+        </StyledSpan>
+        <StyledP>
+          pro 100
+          {/* {' '}
+          <StyledInput
+            type="text"
+            placeholder="100"
+            onChange={() => this.calculateAmount()}
+          />{' '} */}
+          g
+        </StyledP>
 
         <StyledMain>
           <div>

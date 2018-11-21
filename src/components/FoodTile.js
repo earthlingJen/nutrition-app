@@ -30,17 +30,17 @@ const StyledTile = styled.div`
 export default class FoodTile extends Component {
   static propTypes = {
     onClick: PropTypes.func,
-    veggieName: PropTypes.string,
-    veggieIcon: PropTypes.string,
-    veggieValue: PropTypes.string,
+    foodName: PropTypes.string,
+    foodIcon: PropTypes.string,
+    foodValue: PropTypes.string,
   }
   render() {
-    const { veggieName, veggieValue, veggieIcon, onClick } = this.props
+    const { foodName, foodValue, foodIcon, onClick } = this.props
     return (
       <StyledTile onClick={onClick}>
-        <div>{veggieName}</div>
-        <img src={veggieIcon} alt={veggieName} style={{ width: '20px' }} />
-        <div>{veggieValue}</div>
+        <div>{foodName}</div>
+        <img src={foodIcon} alt={foodName} style={{ width: '20px' }} />
+        <div>{foodValue}</div>
       </StyledTile>
     )
   }

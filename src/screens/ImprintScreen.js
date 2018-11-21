@@ -25,12 +25,18 @@ export default class ImprintScreen extends Component {
         <Container>
           <h4>Anmerkungen:</h4>
           <p>* = es liegen keine Daten vor</p>
-          <p>Alle Angaben ohne Gewähr.</p>
-          <br />
+          <p>Alle Angaben sind ohne Gewähr.</p>
+          <p>
+            Bei Jod und Selen wird dringend empfohlen, die entsprechende
+            Tagesdosis nicht zu überschreiten.
+          </p>
+
           <h4>Quellen: </h4>
           <p>
-            <a href="">Die große vegane Nährwerttabelle</a> von Katharina Petter
-            und Tobias Pohlmann von 2007{' '}
+            <a href="http://www.veganity.com/GVNWT/Naehrwerttabelle.pdf">
+              Die große vegane Nährwerttabelle
+            </a>{' '}
+            von Katharina Petter und Tobias Pohlmann von 2007{' '}
           </p>
           <p>
             Nahrungsmittelicons stammen zum Großteil von{' '}
@@ -48,6 +54,9 @@ export default class ImprintScreen extends Component {
             >
               CC 3.0 BY
             </a>
+          </p>
+          <p>
+            Vielen Dank an Susann Neziri für die Beratung zu den Nährstoffdaten.
           </p>
         </Container>
         <Footer />

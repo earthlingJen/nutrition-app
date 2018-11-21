@@ -5,6 +5,7 @@ import {
   updatePickedFood,
   setSelectFood,
   renderFoodOnPlate,
+  deleteFood,
 } from '../actions'
 
 const mapStateToProps = state => ({
@@ -17,6 +18,7 @@ const mapStateToProps = state => ({
   pickedFoodType: state.pickedFoodType,
   foodOnPlate: state.foodOnPlate,
   amount: state.amount,
+  seleniumTooHigh: state.seleniumTooHigh,
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -24,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
   updatePickedFood: value => dispatch(updatePickedFood(value)),
   setSelectFood: value => dispatch(setSelectFood(value)),
   renderFoodOnPlate: value => dispatch(renderFoodOnPlate(value)),
+  deleteFood: value => dispatch(deleteFood(value)),
 })
 
 export default connect(
